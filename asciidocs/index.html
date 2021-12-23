@@ -445,7 +445,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">Thomas Spindler</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2021-12-22</span>
+<span id="revdate">2021-12-23</span>
 <br><span id="revremark">ITP</span>
 </div>
 <div id="toc" class="toc2">
@@ -473,6 +473,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_git_2">5. GIT:</a></li>
+<li><a href="#_23_12_2021_git_merge">6. 23.12.2021 GIT Merge</a>
+<ul class="sectlevel2">
+<li><a href="#_idea_command">6.1. idea . Command:</a></li>
+<li><a href="#_git_merge_mit_intellij">6.2. Git Merge mit IntelliJ:</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -654,7 +660,10 @@ ein Repository kann beliebig viele Branches haben.<br></p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>ssh-keygen -t rsa</pre>
+<pre>ssh-keygen -t rsa
+ssh-add ~/.ssh/&lt;KEYNAME (id_rsa)&gt;
+git config --global user.name "&lt;YOUR USERNAME&gt;"
+git config --global user.email "&lt;YOUR EMAIL"&gt;</pre>
 </div>
 </div>
 </div>
@@ -754,15 +763,75 @@ Daher braucht man git stash:</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-vor dem commit IMMER einen pull machen
+vor dem commit <strong>IMMER</strong> einen pull machen
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Öffnen des Repos in Intelliji für einen Merge
+<p>Öffnen des Repos in IntelliJ für einen Merge<br>
 Mergeconflikte sind auf der Commandline eher schwer zu machen,
-daher sollten wir dafür einen Editor verwenden (Intelliji, VSCode)</p>
+daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).</p>
+</div>
+<div class="paragraph">
+<p>Man kann dafür auch andere Programme verwenden, z.B Github desktop</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_23_12_2021_git_merge">6. 23.12.2021 GIT Merge</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_idea_command">6.1. idea . Command:</h3>
+<div class="paragraph">
+<p>Öffnen eines Ordners mit den Command "idea .":</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Alle Jetbrains Produkte über die Toolbox installieren
+</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Toolbox settings
+&gt; Tools
+&gt; generate shell scripts auf on
+&gt; Ordner: /home/idea-scripts
+Apply</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>im Ordner /home/idea-scripts sollten nun die Scripts generiert worden sein.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git_merge_mit_intellij">6.2. Git Merge mit IntelliJ:</h3>
+<div class="literalblock">
+<div class="content">
+<pre>git pull (blauer Pfeil)
+mergen
+dann auf dem Interface auswählen bis alles passt</pre>
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+HÜ: OraVM hinbekommen und dokumentieren
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 </div>
@@ -770,7 +839,7 @@ daher sollten wir dafür einen Editor verwenden (Intelliji, VSCode)</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2021-12-22 19:29:39 +0100
+Last updated 2021-12-23 11:47:18 +0100
 </div>
 </div>
 </body>
