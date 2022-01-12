@@ -188,8 +188,8 @@ im Ordner /home/idea-scripts sollten nun die Scripts generiert worden sein.
     dann auf dem Interface auswählen bis alles passt
 
 IMPORTANT: HÜ: OraVM hinbekommen und dokumentieren
-
-=== IT Merge 2 (Mitschrift Thomas Spindler)
+////
+=== GIT Merge 2 (Mitschrift Thomas Spindler)
 11.01.2022
 
 Alle pullen das aktuelle Repo
@@ -241,3 +241,31 @@ Dies kann auch in IntelliJ automatisiert werden.
     > settings
     > git
     > Explicitly check for incoming commits on remotes: always
+////
+
+=== Git stash
+
+2 Leute klonen ein Git Repository und ändern in einem beliebigen File eine bestimmte Zeile ab. +
+Wir haben bereits gelernt, dass man die Abänderungen mergen kann, allerdings werden wir uns in dieser Übung stash verwenden.
+
+Eine der Personen push dann die Abänderungen auf das aktuelle Repository:
+
+    git commit -m "<MESSAGE>"
+    git push
+
+Hiermit haben wir einen Konflikt erstellt.
+
+Die andere Person "versteckt" nun ihre Abänderungen, mithilfe von git stash, und pullt dann die Abänderungen vom remote Repo.
+
+    git stash
+    git pull
+
+Danach holen wir die Abänderungen wieder zurück:
+
+    git stash pop
+
+Dann können wir ohne weitere Probleme commiten und pushen.
+
+IMPORTANT: Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern. Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
+
+image::IntelliJ-auto-git-pulls.jpg[]
