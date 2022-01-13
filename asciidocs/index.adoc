@@ -269,3 +269,121 @@ Dann können wir ohne weitere Probleme commiten und pushen.
 IMPORTANT: Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern. Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
 
 image::IntelliJ-auto-git-pulls.jpg[]
+
+deamon = Programm, dass im Hintergrund rennt +
+JGit = github commands von Java verwenden.
+
+== Java Versionen:
+
+Architye: Quelle / Vorbild
+
+- Java ME: Java mobile (tot)
+
+- Java SE: Java standart edition (für Desktop)
+
+- Java EE: Java Enterprise:
+    - zusätzliche Libraries für verteilte Systeme
+    - Verwenden von Java App Servern (programmiere auf Servern)
+    - nun Jakarte EE
+    - microprofile:
+        - neue App!
+        - daraus Entwicklungen:
+            - Quarkus
+            - Helidon
+            - micronaut
+
+Rest API: Internet für Maschinen (verwendet HTTP)  +
+HTML / HTTP: Internet für Menschen
+
+Java properties
+
+Grundelemente des Programmierens:
+
+. Sequenz
+. Schleifen
+
+== PlantUML (Mitschrift Thomas Spindler)
+
+Um Plantuml verwenden zu können, ist es wichtig, dass man ein Plugin names "PlantUML Intigration".  +
+PlantUML dokumentation: https://plantuml.com
+
+IMPORTANT: PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
+
+PlantUML in Asciidoc:
+
+    [plantuml,demo-cld]
+    ----
+    @startuml
+    .
+    .
+    .
+    @enduml
+    ----
+
+jedes PlantUML hat ein Start und ein Endterminal:
+
+    @startuml
+    start
+    ...
+    stop
+    @enduml
+
+PlantUML if-statements:
+
+    if(<TEXT>) is (<BEDINGUNG>) then
+    ..
+    else
+    ...
+    endif
+
+PlantUML von externen File:
+
+    include::<PATH>/<FILE>[];
+    include::plantuml/my.activity.puml[];
+
+.Beispiel aus dem Unterricht:
+[plantuml,demo-cld]
+----
+@startuml
+start
+:Hello world;
+if (paket-Gewicht) is (> 10kg) then
+:Sende mit LKW;
+else
+:sende mit PKW;
+endif
+:Nimm Paket in Emfpang;
+stop
+@enduml
+----
+
+.PlantUML als eigenes UML-file
+[plantuml, xxx.png]
+----
+include::plantuml/my.activity.puml[];
+----
+
+== Asciidoc:
+
+=== Überschriften:
+Überschriften in Ascidoc:
+
+    .<ÜBERSCHRIFT>
+
+=== Images Einbinden:
+ganz oben Image order festlegen:
+
+    ifndef::imagesdir[:imagesdir: images]
+
+Und dann Images einfach einbinden mit:
+
+    image::<IMAGE NAME>[]
+
+=== Source Code Einbinden:
+Source Code einbinden:
+
+    [source, java]
+    ----
+    include::{sourcedir}/at/htl/vehicleclerent/control/InitBean
+    .java[tag=init-bean,indent=0]
+    ----
