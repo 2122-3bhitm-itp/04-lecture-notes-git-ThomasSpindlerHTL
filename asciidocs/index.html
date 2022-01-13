@@ -481,12 +481,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_java_versionen">7. Java Versionen:</a></li>
-<li><a href="#_plantuml_mitschrift_thomas_spindler">8. PlantUML (Mitschrift Thomas Spindler)</a></li>
-<li><a href="#_asciidoc">9. Asciidoc:</a>
+<li><a href="#_plantuml_mitschrift_thomas_spindler">8. PlantUML (Mitschrift Thomas Spindler)</a>
 <ul class="sectlevel2">
-<li><a href="#_überschriften">9.1. Überschriften:</a></li>
-<li><a href="#_images_einbinden">9.2. Images Einbinden:</a></li>
-<li><a href="#_source_code_einbinden">9.3. Source Code Einbinden:</a></li>
+<li><a href="#_umgebungen">8.1. Umgebungen</a></li>
+<li><a href="#_grundlagen">8.2. Grundlagen</a></li>
+<li><a href="#_beispiel_aus_dem_unterricht">8.3. Beispiel aus dem Unterricht</a></li>
 </ul>
 </li>
 </ul>
@@ -917,7 +916,7 @@ JGit = github commands von Java verwenden.</p>
 <p>Java ME: Java mobile (tot)</p>
 </li>
 <li>
-<p>Java SE: Java standart edition (für Desktop)</p>
+<p>Java SE: Java standard edition (für Desktop)</p>
 </li>
 <li>
 <p>Java EE: Java Enterprise:</p>
@@ -977,38 +976,58 @@ HTML / HTTP: Internet für Menschen</p>
 <h2 id="_plantuml_mitschrift_thomas_spindler">8. PlantUML (Mitschrift Thomas Spindler)</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Um Plantuml verwenden zu können, ist es wichtig, dass man ein Plugin names "PlantUML Intigration". <br>
-PlantUML dokumentation: <a href="https://plantuml.com" class="bare">https://plantuml.com</a></p>
+<p>PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.</p>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
-</td>
-</tr>
-</table>
-</div>
+<div class="sect2">
+<h3 id="_umgebungen">8.1. Umgebungen</h3>
+<div class="sect3">
+<h4 id="_plantuml_in_asciidoc">8.1.1. PlantUML in Asciidoc</h4>
 <div class="paragraph">
-<p>PlantUML in Asciidoc:</p>
+<p>Da wir unsere Mitschriften in Asciidoc führen, zeigen wir dies gleich am Anfang.<br>
+Einbindung von PlantUML in Asciidoc:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>[plantuml,demo-cld]
+<pre>[plantuml, &lt;NAME&gt;]
 ----
 @startuml
-.
-.
-.
+...
 @enduml
 ----</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>jedes PlantUML hat ein Start und ein Endterminal:</p>
+<p>Hierbei gilt zu beachten, dass der &lt;NAME&gt; immer unterschiedlich sein muss. Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.</p>
+</div>
+<div class="paragraph">
+<p>Um ein externes File einzufügen, kann folgende Syntax verwendet werden:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[plantuml, &lt;NAME&gt;]
+----
+include::plantuml/plantuml-example-1.puml[]
+----</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_plantuml_in_intellij">8.1.2. PlantUML in IntelliJ</h4>
+<div class="paragraph">
+<p>Das Plugin "PlantUML initgration" herunterladen und installieren. Anschließend das IDE neu starten</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/IntelliJ-PlantUML-intigration.jpg" alt="IntelliJ PlantUML intigration">
+</div>
+<div class="title">Figure 1. Installieren von IntelliJ Plugin</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_grundlagen">8.2. Grundlagen</h3>
+<div class="paragraph">
+<p>jedes PlantUML file hat ein Start und ein Ende:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1020,86 +1039,100 @@ stop
 </div>
 </div>
 <div class="paragraph">
-<p>PlantUML if-statements:</p>
+<p>Nachschlagwerk: <a href="https://plantuml.com">PlantUML Dokumentation</a></p>
+</div>
+<div class="sect3">
+<h4 id="_sequenzen">8.2.1. Sequenzen</h4>
+<div class="paragraph">
+<p>Eine Sequenz ist ein Teil unseres Programmes. Mithilfe von PlantUML können wird diese schnell und genau darstellen.<br></p>
+</div>
+<div class="paragraph">
+<p>Beispiel für eine Sequenz in PlantUML:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>if(&lt;TEXT&gt;) is (&lt;BEDINGUNG&gt;) then
-..
+<pre>@startuml
+:Hello World;
+@enduml</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>wird zu:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/hello-world.png" alt="hello world" width="105" height="56">
+</div>
+</div>
+<div class="paragraph">
+<p>Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben. Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@startuml
+HelloWorld:This is a description
+@enduml</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/hello-world2.png" alt="hello world2" width="144" height="64">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_if_statements">8.2.2. If-statements</h4>
+<div class="paragraph">
+<p>If Statements in PlantUML darstellen:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@startuml
+if(Paket-Gewicht) is (&gt;10kg) then
+:Sende mit LKW;
 else
-...
-endif</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>PlantUML von externen File:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>include::&lt;PATH&gt;/&lt;FILE&gt;[];
-include::plantuml/my.activity.puml[];</pre>
+:Sende mit PKW;
+endif
+@enduml</pre>
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/demo-cld.png" alt="demo cld" width="271" height="313">
+<img src="images/if-statement.png" alt="if statement" width="252" height="201">
 </div>
-<div class="title">Figure 1. Beispiel aus dem Unterricht:</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_start_und_stop">8.2.3. Start und Stop</h4>
+<div class="paragraph">
+<p>Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende. Diese können mit den Keyworten "start" und "stop" dargestellt werden.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>@startuml
+start
+:HelloWorld
+stop
+@enduml</pre>
+</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/xxx.png.png" alt="xxx" width="303" height="205">
+<img src="images/start-stop.png" alt="start stop" width="102" height="137">
 </div>
-<div class="title">Figure 2. PlantUML als eigenes UML-file</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_asciidoc">9. Asciidoc:</h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="_überschriften">9.1. Überschriften:</h3>
-<div class="paragraph">
-<p>Überschriften in Ascidoc:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>.&lt;ÜBERSCHRIFT&gt;</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_images_einbinden">9.2. Images Einbinden:</h3>
+<h3 id="_beispiel_aus_dem_unterricht">8.3. Beispiel aus dem Unterricht</h3>
 <div class="paragraph">
-<p>ganz oben Image order festlegen:</p>
+<p>Mithilfe diesen Beispieles wurde uns PlantUML erklärt:</p>
 </div>
-<div class="literalblock">
+<div class="imageblock">
 <div class="content">
-<pre>ifndef::imagesdir[:imagesdir: images]</pre>
+<img src="images/demo-cld.png" alt="demo cld" width="251" height="311">
 </div>
-</div>
-<div class="paragraph">
-<p>Und dann Images einfach einbinden mit:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>image::&lt;IMAGE NAME&gt;[]</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_source_code_einbinden">9.3. Source Code Einbinden:</h3>
-<div class="paragraph">
-<p>Source Code einbinden:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>[source, java]
-----
-include::{sourcedir}/at/htl/vehicleclerent/control/InitBean
-.java[tag=init-bean,indent=0]
-----</pre>
-</div>
+<div class="title">Figure 2. Beispiel aus dem Unterricht:</div>
 </div>
 </div>
 </div>
@@ -1108,7 +1141,7 @@ include::{sourcedir}/at/htl/vehicleclerent/control/InitBean
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-01-13 11:52:14 +0100
+Last updated 2022-01-13 18:32:43 +0100
 </div>
 </div>
 </body>

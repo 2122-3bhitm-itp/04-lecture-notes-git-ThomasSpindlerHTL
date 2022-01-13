@@ -279,7 +279,7 @@ Architye: Quelle / Vorbild
 
 - Java ME: Java mobile (tot)
 
-- Java SE: Java standart edition (für Desktop)
+- Java SE: Java standard edition (für Desktop)
 
 - Java EE: Java Enterprise:
     - zusätzliche Libraries für verteilte Systeme
@@ -303,24 +303,38 @@ Grundelemente des Programmierens:
 . Schleifen
 
 == PlantUML (Mitschrift Thomas Spindler)
+PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
 
-Um Plantuml verwenden zu können, ist es wichtig, dass man ein Plugin names "PlantUML Intigration".  +
-PlantUML dokumentation: https://plantuml.com
+=== Umgebungen
 
-IMPORTANT: PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
+==== PlantUML in Asciidoc
+Da wir unsere Mitschriften in Asciidoc führen, zeigen wir dies gleich am Anfang. +
+Einbindung von PlantUML in Asciidoc:
 
-PlantUML in Asciidoc:
-
-    [plantuml,demo-cld]
+    [plantuml, <NAME>]
     ----
     @startuml
-    .
-    .
-    .
+    ...
     @enduml
     ----
 
-jedes PlantUML hat ein Start und ein Endterminal:
+Hierbei gilt zu beachten, dass der <NAME> immer unterschiedlich sein muss. Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.
+
+Um ein externes File einzufügen, kann folgende Syntax verwendet werden:
+
+    [plantuml, <NAME>]
+    ----
+    include::plantuml/plantuml-example-1.puml[]
+    ----
+
+==== PlantUML in IntelliJ
+Das Plugin "PlantUML initgration" herunterladen und installieren. Anschließend das IDE neu starten
+
+.Installieren von IntelliJ Plugin
+image::IntelliJ-PlantUML-intigration.jpg[]
+
+=== Grundlagen
+jedes PlantUML file hat ein Start und ein Ende:
 
     @startuml
     start
@@ -328,62 +342,99 @@ jedes PlantUML hat ein Start und ein Endterminal:
     stop
     @enduml
 
-PlantUML if-statements:
+Nachschlagwerk: https://plantuml.com[PlantUML Dokumentation]
 
-    if(<TEXT>) is (<BEDINGUNG>) then
-    ..
+==== Sequenzen
+Eine Sequenz ist ein Teil unseres Programmes. Mithilfe von PlantUML können wird diese schnell und genau darstellen. +
+
+Beispiel für eine Sequenz in PlantUML:
+
+    @startuml
+    :Hello World;
+    @enduml
+
+wird zu:
+
+[plantuml,hello-world]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+:Hello World;
+@enduml
+----
+
+Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben. Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.
+
+    @startuml
+    HelloWorld:This is a description
+    @enduml
+
+[plantuml,hello-world2]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+HelloWorld:This is a description
+@enduml
+----
+
+==== If-statements
+If Statements in PlantUML darstellen:
+
+    @startuml
+    if(Paket-Gewicht) is (>10kg) then
+    :Sende mit LKW;
     else
-    ...
+    :Sende mit PKW;
     endif
+    @enduml
 
-PlantUML von externen File:
+[plantuml,if-statement]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
 
-    include::<PATH>/<FILE>[];
-    include::plantuml/my.activity.puml[];
+start
+if(Paket-Gewicht) is (>10kg) then
+:Sende mit LKW;
+else
+:Sende mit PKW;
+endif
+stop
+@enduml
+----
+
+==== Start und Stop
+Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende. Diese können mit den Keyworten "start" und "stop" dargestellt werden.
+
+    @startuml
+    start
+    :HelloWorld
+    stop
+    @enduml
+
+[plantuml, start-stop]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+start
+:HelloWorld;
+stop
+@enduml
+----
+
+=== Beispiel aus dem Unterricht
+Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
 
 .Beispiel aus dem Unterricht:
 [plantuml,demo-cld]
 ----
 @startuml
-start
-:Hello world;
-if (paket-Gewicht) is (> 10kg) then
-:Sende mit LKW;
-else
-:sende mit PKW;
-endif
-:Nimm Paket in Emfpang;
-stop
-@enduml
+include::plantuml/plantuml-example-1.puml[]
 ----
-
-.PlantUML als eigenes UML-file
-[plantuml, xxx.png]
-----
-include::plantuml/my.activity.puml[];
-----
-
-== Asciidoc:
-
-=== Überschriften:
-Überschriften in Ascidoc:
-
-    .<ÜBERSCHRIFT>
-
-=== Images Einbinden:
-ganz oben Image order festlegen:
-
-    ifndef::imagesdir[:imagesdir: images]
-
-Und dann Images einfach einbinden mit:
-
-    image::<IMAGE NAME>[]
-
-=== Source Code Einbinden:
-Source Code einbinden:
-
-    [source, java]
-    ----
-    include::{sourcedir}/at/htl/vehicleclerent/control/InitBean
-    .java[tag=init-bean,indent=0]
-    ----
