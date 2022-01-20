@@ -273,6 +273,87 @@ image::IntelliJ-auto-git-pulls.jpg[]
 deamon = Programm, dass im Hintergrund rennt +
 JGit = github commands von Java verwenden.
 
+=== Weitere Git Übungen:
+
+    git pull
+
+=== .idea ordner entfernen:
+
+    rm -rf .idea
+    git add ..idea
+
+kann verkürtzt werden auf:
+
+    git rm -rf .idea
+
+dann pullen, comitten und pushen
+
+    git status
+    git add .gitignore
+    git commit -m "Remove idea folder"
+    git push
+
+ins Gitignore einfügen:
+
+    .idea/
+    *.iml
+    target/
+
+dann committen und pushen
+
+    git add .
+    git status
+    git commit -m "Remove idea folder from project"
+    git push
+
+=== Branchen:
+
+den aktuellen Branch immer aktuell halten mithilfe von:
+
+    git merge main
+
+Dies updated alle changes des aktuellen branches mit dem main branch.
+
+[plantuml, git-merge]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+
+
+@enduml
+----
+
+neuen branch erstellen (name ist feature)
+
+    git branch feature
+
+auf den Branch wechseln:
+
+    git switch feature
+
+Branch überprüfen:
+
+    git status
+
+Dann ein File abändern.
+Feature Branch immer wie folgt benennen:
+
+    feature/<NAME DES FEATURES>
+
+checkout ist die alte Bezeichnung für switch.
+
+branch feature in main mergen:
+
+    git checkout main
+    git merge feature
+
+dann den Branch löschen
+
+    git switch main
+    git branch -d feature
+
 == Java Versionen:
 
 Architye: Quelle / Vorbild
@@ -428,6 +509,69 @@ start
 stop
 @enduml
 ----
+=== PlantUML 2 (20.01.2022)
+
+[plantuml, ucd1, png]
+----
+@startuml
+left to right direction
+actor "driver" as fc
+rectangle PKW {
+    usecase "transportsgoods" as UCGOODS
+    usecase "transport persons" as UCPERSON
+    usecase "cruice" as UCCRUICE
+}
+fc -- UCGOODS
+fc -- UCPERSON
+fc -- UCCRUIS
+@enduml
+----
+
+TIP: In Plantuml kann man verschiedene Themes verwenden,
+damit die Ergebnisse unterschiedliche Styles haben.
+
+=== Callouts
+
+[source, java]
+----
+    class Main() {
+        public static void main(String[] args){
+          String s = "TEXT"; //<.>
+          System.out.println(s); //<.>
+        }
+    }
+----
+<.> Erstellen eines Textes
+<.> Ausgeben des oben erstellten Textes
+
+=== Admonitions
+
+TIP: Lernen Sie die Fachbegriffe
+
+IMPORTANT: Damit Sie gut googeln können
+
+=== Phasen der SoftwareEntwicklung
+Es gibt das V und das Wasserfall Modell. +
+V-Modell: angeordnet wie ein V (V-modell ) +
+Arm 1:
+
+    WAS? (Plichtenheft)
+    WIE? (Grobentwurf, Feinentwurf)
+    Ich mache (Implementierung)
+
+Arm 2: (rechte seit)
+
+    Intergrationstest
+    Systemtest
+    Abnahme
+
+image::V-Modell.png[]
+
+Fakturer: Ein Rechnungs-erstellungs Programm
+
+Seiten wichtig: 17, 27, 28, 45,
+Seite nicht wichtig: 18, 19, 22, 49 - 50
+Kaptiel UML: complience Level lernen (S. 74)
 
 === Beispiel aus dem Unterricht
 Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
