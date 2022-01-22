@@ -1,0 +1,584 @@
+= Lecture Notes / 3BHITM / ITP
+Thomas Spindler
+1.0.0, {docdate}: ITP
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Überschriften / section numbering
+:toc: left
+
+== 02.12.2021
+
+Buch S. 81: Projekt-Start-up-Workshop
+
+=== ITP:
+Projekte
+ProjektvorgehensModelle
+IPT vereint Mathematik, English, SEW, und weitere in ein Fach
+
+Wie kann ich ein Projekt durchführen?
+(Teams, zusammenarbeit, Codesicherung)
+oft einfach nur eine art von Checklisten abarbeiten
+
+Buch S. 84: Organisationsformen
+Beispiel Mondlandung (alles auf eine Aufgabe (Task force)
+
+Unternehmensbereich:
+
+* Einkauf
+* Verkauf
+* Verwaltung
+* Werkstätte
+* usw
+
+Strategien:
+
+* Strategie (2-4 Jahre)		z.B: Produktoptionen
+* Taktiv (1 Jahr)			z.B: verwendete Maschinen
+* operatives Vorgehen (unmittelbar)	z.B: Arbeitszeiten (Schichtbetrieb)
+
+    HÜ: S. 85 lesen (Kapitel 2 fertig)
+
+vcs = version controlling System
+
+vcs braucht man um während des Entwickelns zurückgehen kann, wenn es Fehler gibt.
+
+Arten von VCS:
+
+== 07.12.2021
+
+=== Test
+
+Test kann man sich jederzeit in der Schule abholen, bekanntgeben nach Ablauf der gesetzlichen Frist (Donnerstag)
+
+Kein Wiederholungstest aufgrund zu weniger 5er.
+
+=== Git
+
+Status des GitRepositories:
+
+    git status
+    git status -s [For better file overview]
+
+Git restore staged Files (unstaging):
+
+    git restore --staged .["." für alle Dateien]
+
+verstehen des Git staging Systems
+
+zum Hinzufügen eines Files in ein Git System
+
+    git add <FILENAME>
+
+Staging in Git:
+
+    -> auswählen welche Dateien und Verzeichnisse ins Repo gesichert werden sollten
+
+Änderungen bis zu m letzten Commit zurücksetzen:
+
+    git restore .
+    git restore <FILE>
+
+Löschen neu erstellter Files:
+
+    git clean -f
+
+== 14.12.2021
+
+Origin hinzufügen mit
+
+    git origin add <LINK>
+
+=== Git Branches
+Branches sind pointer auf den letzen Commit des Master branches +
+ein Repository kann beliebig viele Branches haben. +
+
+== Lecture 21.12.2021
+
+=== Github Keygen
+
+mithilfe von SSH keys:
+
+    ssh-keygen -t rsa
+    ssh-add ~/.ssh/<KEYNAME (id_rsa)>
+    git config --global user.name "<YOUR USERNAME>"
+    git config --global user.email "<YOUR EMAIL">
+
+== GIT:
+
+neuen Ordner erstellen und erneut Klonen
+
+    mkdir work
+    cd work
+    git clone <LINK>
+
+File im Directory abändern:
+
+    gedit readme.md
+    <ändern des files>
+    git commit -m "test merge"
+    git push
+
+Andere Person nun auf dem repo:
+
+    git status
+
+man bemerkt, dass das Repo nicht auf dem aktuellen Stand ist +
+updaten des Repos:
+
+    git pull
+
+mit diesen Command laded man alle Abänderungen in den
+Dateien des remote repos herunter.
+
+Person 2 editiert dann die Datei, committed und pusht
+
+    echo "Person 2 edit" >> readme.md
+    git commit -m "update readme.md - Person 2"
+    git push
+
+Person 1 ladet nun wieder die Abänderungen herunter
+
+    git pull
+
+nun ändern beide Personen die Datei readme.md ab. +
+beide Personen:
+
+    git add
+    git commit -m "merge test2"
+    git push
+
+bei einer Person wird der push rejected, da das Remote
+repo Änderungen beinhaltet, die noch nicht existieren. +
+Daher braucht man git stash:
+
+    git stash
+
+aufgrund des Commites kann stash nicht ausgeführt werden.
+
+IMPORTANT: vor dem commit *IMMER* einen pull machen
+
+Öffnen des Repos in IntelliJ für einen Merge +
+Mergeconflikte sind auf der Commandline eher schwer zu machen,
+daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).
+
+Man kann dafür auch andere Programme verwenden, z.B Github desktop
+
+== 23.12.2021 GIT Merge
+
+=== idea . Command:
+
+Öffnen eines Ordners mit den Command "idea .":
+
+IMPORTANT: Alle Jetbrains Produkte über die Toolbox installieren
+
+    Toolbox settings
+    > Tools
+    > generate shell scripts auf on
+    > Ordner: /home/idea-scripts
+    Apply
+
+im Ordner /home/idea-scripts sollten nun die Scripts generiert worden sein.
+
+=== Git Merge mit IntelliJ:
+
+    git pull (blauer Pfeil)
+    mergen
+    dann auf dem Interface auswählen bis alles passt
+
+IMPORTANT: HÜ: OraVM hinbekommen und dokumentieren
+////
+=== GIT Merge 2 (Mitschrift Thomas Spindler)
+11.01.2022
+
+Alle pullen das aktuelle Repo
+
+    git pull
+
+dann ändern alle die Selbe Zeile ab.
+Und diese commiten und pushen dann alle die Abänderungen auf das Repo:
+
+    git commit -m "<MESSAGE>"
+    git push
+
+Daraufhin entsteht ein Mergekonflint. Das Pushen wird nur bei einer Person funktionieren.
+
+==== GIT stash:
+
+Stashen mithilfe von:
+
+    git stash
+
+Dies funktioniert nicht, da wir gepullt haben. Git stash muss vor dem pull ausgeführt werden.
+
+'''
+
+Alle pullen das aktuelle Repo
+
+    git pull
+
+dann ändern alle die Selbe Zeile ab.
+Eine Peron pusht dann auf das Repo:
+
+    git commit -m "<MESSAGE>"
+    git push
+
+Bei der anderen Person, stashen wir zuerst die Änderungen, und dann pullen wir alles vom remote Repo.
+
+    git stash
+    git pull
+
+Hiermit verstecken wir alle unsere aktuellen Änderungen, und speichere diese Abänderungen zwischen
+Dann hohlen wir uns die neuesten Änderungen vom Repo. +
+Mit dem folgenden Command holen wir die Änderungen wieder zurück:
+
+    git stash pop
+
+Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikte zu verhindern. +
+Dies kann auch in IntelliJ automatisiert werden.
+
+    > settings
+    > git
+    > Explicitly check for incoming commits on remotes: always
+////
+
+=== Git stash
+
+2 Leute klonen ein Git Repository und ändern in einem beliebigen File eine bestimmte Zeile ab. +
+Wir haben bereits gelernt, dass man die Abänderungen mergen kann, allerdings werden wir uns in dieser Übung stash verwenden.
+
+Eine der Personen push dann die Abänderungen auf das aktuelle Repository:
+
+    git commit -m "<MESSAGE>"
+    git push
+
+Hiermit haben wir einen Konflikt erstellt.
+
+Die andere Person "versteckt" nun ihre Abänderungen, mithilfe von git stash, und pullt dann die Abänderungen vom remote Repo.
+
+    git stash
+    git pull
+
+Danach holen wir die Abänderungen wieder zurück:
+
+    git stash pop
+
+Dann können wir ohne weitere Probleme commiten und pushen.
+
+IMPORTANT: Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern. Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
+
+image::IntelliJ-auto-git-pulls.jpg[]
+
+deamon = Programm, dass im Hintergrund rennt +
+JGit = github commands von Java verwenden.
+
+=== Weitere Git Übungen:
+
+    git pull
+
+=== .idea ordner entfernen:
+
+    rm -rf .idea
+    git add ..idea
+
+kann verkürtzt werden auf:
+
+    git rm -rf .idea
+
+dann pullen, comitten und pushen
+
+    git status
+    git add .gitignore
+    git commit -m "Remove idea folder"
+    git push
+
+ins Gitignore einfügen:
+
+    .idea/
+    *.iml
+    target/
+
+dann committen und pushen
+
+    git add .
+    git status
+    git commit -m "Remove idea folder from project"
+    git push
+
+=== Branchen:
+
+den aktuellen Branch immer aktuell halten mithilfe von:
+
+    git merge main
+
+Dies updated alle changes des aktuellen branches mit dem main branch.
+
+[plantuml, git-merge]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+
+
+@enduml
+----
+
+neuen branch erstellen (name ist feature)
+
+    git branch feature
+
+auf den Branch wechseln:
+
+    git switch feature
+
+Branch überprüfen:
+
+    git status
+
+Dann ein File abändern.
+Feature Branch immer wie folgt benennen:
+
+    feature/<NAME DES FEATURES>
+
+checkout ist die alte Bezeichnung für switch.
+
+branch feature in main mergen:
+
+    git checkout main
+    git merge feature
+
+dann den Branch löschen
+
+    git switch main
+    git branch -d feature
+
+== Java Versionen:
+
+Architye: Quelle / Vorbild
+
+- Java ME: Java mobile (tot)
+
+- Java SE: Java standard edition (für Desktop)
+
+- Java EE: Java Enterprise:
+    - zusätzliche Libraries für verteilte Systeme
+    - Verwenden von Java App Servern (programmiere auf Servern)
+    - nun Jakarte EE
+    - microprofile:
+        - neue App!
+        - daraus Entwicklungen:
+            - Quarkus
+            - Helidon
+            - micronaut
+
+Rest API: Internet für Maschinen (verwendet HTTP)  +
+HTML / HTTP: Internet für Menschen
+
+Java properties
+
+Grundelemente des Programmierens:
+
+. Sequenz
+. Schleifen
+
+== PlantUML (Mitschrift Thomas Spindler)
+PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
+
+=== Umgebungen
+
+==== PlantUML in Asciidoc
+Da wir unsere Mitschriften in Asciidoc führen, zeigen wir dies gleich am Anfang. +
+Einbindung von PlantUML in Asciidoc:
+
+    [plantuml, <NAME>]
+    ----
+    @startuml
+    ...
+    @enduml
+    ----
+
+Hierbei gilt zu beachten, dass der <NAME> immer unterschiedlich sein muss. Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.
+
+Um ein externes File einzufügen, kann folgende Syntax verwendet werden:
+
+    [plantuml, <NAME>]
+    ----
+    include::plantuml/plantuml-example-1.puml[]
+    ----
+
+==== PlantUML in IntelliJ
+Das Plugin "PlantUML initgration" herunterladen und installieren. Anschließend das IDE neu starten
+
+.Installieren von IntelliJ Plugin
+image::IntelliJ-PlantUML-intigration.jpg[]
+
+=== Grundlagen
+jedes PlantUML file hat ein Start und ein Ende:
+
+    @startuml
+    start
+    ...
+    stop
+    @enduml
+
+Nachschlagwerk: https://plantuml.com[PlantUML Dokumentation]
+
+==== Sequenzen
+Eine Sequenz ist ein Teil unseres Programmes. Mithilfe von PlantUML können wird diese schnell und genau darstellen. +
+
+Beispiel für eine Sequenz in PlantUML:
+
+    @startuml
+    :Hello World;
+    @enduml
+
+wird zu:
+
+[plantuml,hello-world]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+:Hello World;
+@enduml
+----
+
+Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben. Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.
+
+    @startuml
+    HelloWorld:This is a description
+    @enduml
+
+[plantuml,hello-world2]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+HelloWorld:This is a description
+@enduml
+----
+
+==== If-statements
+If Statements in PlantUML darstellen:
+
+    @startuml
+    if(Paket-Gewicht) is (>10kg) then
+    :Sende mit LKW;
+    else
+    :Sende mit PKW;
+    endif
+    @enduml
+
+[plantuml,if-statement]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+start
+if(Paket-Gewicht) is (>10kg) then
+:Sende mit LKW;
+else
+:Sende mit PKW;
+endif
+stop
+@enduml
+----
+
+==== Start und Stop
+Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende. Diese können mit den Keyworten "start" und "stop" dargestellt werden.
+
+    @startuml
+    start
+    :HelloWorld
+    stop
+    @enduml
+
+[plantuml, start-stop]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+start
+:HelloWorld;
+stop
+@enduml
+----
+=== PlantUML 2 (20.01.2022)
+
+[plantuml, ucd1, png]
+----
+@startuml
+left to right direction
+actor "driver" as fc
+rectangle PKW {
+    usecase "transportsgoods" as UCGOODS
+    usecase "transport persons" as UCPERSON
+    usecase "cruice" as UCCRUICE
+}
+fc -- UCGOODS
+fc -- UCPERSON
+fc -- UCCRUIS
+@enduml
+----
+
+TIP: In Plantuml kann man verschiedene Themes verwenden,
+damit die Ergebnisse unterschiedliche Styles haben.
+
+=== Callouts
+
+[source, java]
+----
+    class Main() {
+        public static void main(String[] args){
+          String s = "TEXT"; //<.>
+          System.out.println(s); //<.>
+        }
+    }
+----
+<.> Erstellen eines Textes
+<.> Ausgeben des oben erstellten Textes
+
+=== Admonitions
+
+TIP: Lernen Sie die Fachbegriffe
+
+IMPORTANT: Damit Sie gut googeln können
+
+=== Phasen der SoftwareEntwicklung
+Es gibt das V und das Wasserfall Modell. +
+V-Modell: angeordnet wie ein V (V-modell ) +
+Arm 1:
+
+    WAS? (Plichtenheft)
+    WIE? (Grobentwurf, Feinentwurf)
+    Ich mache (Implementierung)
+
+Arm 2: (rechte seit)
+
+    Intergrationstest
+    Systemtest
+    Abnahme
+
+image::V-Modell.png[]
+
+Fakturer: Ein Rechnungs-erstellungs Programm
+
+Seiten wichtig: 17, 27, 28, 45,
+Seite nicht wichtig: 18, 19, 22, 49 - 50
+Kaptiel UML: complience Level lernen (S. 74)
+
+=== Beispiel aus dem Unterricht
+Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
+
+.Beispiel aus dem Unterricht:
+[plantuml,demo-cld]
+----
+@startuml
+include::plantuml/plantuml-example-1.puml[]
+----

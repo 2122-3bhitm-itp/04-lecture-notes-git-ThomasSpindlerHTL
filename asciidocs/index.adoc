@@ -1,4 +1,4 @@
-= Lecture Notes / 3BHITM / ITP
+= Lecture Notes ITP Thomas Spindler
 Thomas Spindler
 1.0.0, {docdate}: ITP
 ifndef::imagesdir[:imagesdir: images]
@@ -8,382 +8,452 @@ ifndef::imagesdir[:imagesdir: images]
 :sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
 
-== 02.12.2021
+=== Mitschrift direkt aus dem Unterricht
+IMPORTANT: Dies ist eine schön zusammengefasste und sortierte Mitschrift. Die Mitschrift aus dem Unterricht befindet sich https://2122-3bhitm-itp.github.io/04-lecture-notes-git-ThomasSpindlerHTL/asciidocs/notes.html[hier].
 
-Buch S. 81: Projekt-Start-up-Workshop
+== Asciidoc / Asciidoctor
+Asciidoc wird im Unterricht verwendet, um eine schöne und ordentliche Mitschrift zu führen. Damit dies gut funktioniert,
+sollte man zumindestens die Basics verstehen. Dieses Dokument ist ebenfalls in Asciidoc erstellt und geschrieben.
 
-=== ITP:
-Projekte
-ProjektvorgehensModelle
-IPT vereint Mathematik, English, SEW, und weitere in ein Fach
+Alle formatierungen können hier nachgeschlagen werden: https://powerman.name/doc/asciidoc[Asciidoc cheat sheet]
 
-Wie kann ich ein Projekt durchführen?
-(Teams, zusammenarbeit, Codesicherung)
-oft einfach nur eine art von Checklisten abarbeiten
+=== Was ist Asciidoctor?
 
-Buch S. 84: Organisationsformen
-Beispiel Mondlandung (alles auf eine Aufgabe (Task force)
+==== Problemstellung
 
-Unternehmensbereich:
+* Dokumentationen für Software Projekte werden oft in binären Formaten wie MS-Word, LibreOffice usw erstellt.
+* Problem dabei ist, dass die Versionierung solcher Dokumente nur eingeschränkt möglich ist.
+* Besser wäre:
+** wenn sämtliche Dokumentation als Text vorliegt
+** auch sollte die Dokumentation von Softwaresystemen direkt aus dem Code generiert werden
 
-* Einkauf
-* Verkauf
-* Verwaltung
-* Werkstätte
-* usw
+==== Lösung
+* Verwendet man solche Auszeichnungssprachen wie Markdown, plantuml und Asciidoctor / Asciidoc so spricht man von "doc-as-code"
+** Die Dokumentation wird nicht mit eigenen Werkzeugen (Textverarbeitung, Zeichenprogramm usw. erstellt), sonder in der IDE, in der auch die Programme erstellt werden
 
-Strategien:
+=== Simple formatting
+Dies sind die Basics von Asciidoc, die man auf jeden Fall Beherrschen muss, um vernünftig arbeiten zu können.
 
-* Strategie (2-4 Jahre)		z.B: Produktoptionen
-* Taktiv (1 Jahr)			z.B: verwendete Maschinen
-* operatives Vorgehen (unmittelbar)	z.B: Arbeitszeiten (Schichtbetrieb)
+Wichtig hierbei ist, darauf zu achten, dass zwischen den Texten sich immer wieder leere Zeilen befinden, sonst
+wird die Formatierung nicht funktionieren.
 
-    HÜ: S. 85 lesen (Kapitel 2 fertig)
+=== Asciidoc Nachschlagwerke:
 
-vcs = version controlling System
+** https://docs.asciidoctor.org/asciidoc/latest/[Offizielle Asciidoctor Dokumentation]
+** https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/[Offizielle Schnellanleitung]
+** https://docs.asciidoctor.org/reveal.js-converter/latest/showcase/[Präsentationen mit Adoc]
+** https://github.com/Zenika/adoc-presentation-model[Präsentationen modell]
 
-vcs braucht man um während des Entwickelns zurückgehen kann, wenn es Fehler gibt.
+==== Text
+Text wird einfach in das adoc file geschrieben.
 
-Arten von VCS:
+==== Überschriften
+Syntax für Überschriften in Asciidoc:
 
-== 07.12.2021
+    == <TEXT>
 
-=== Test
+Hiermit erstellt man eine Überschrift 1. Levels. Für jedes Level wird einfach ein weiteres = hinzugefügt. +
+Dies funktioniert bis Level 4. +
+Überschrift 2. Levels:
 
-Test kann man sich jederzeit in der Schule abholen, bekanntgeben nach Ablauf der gesetzlichen Frist (Donnerstag)
+    === <TEXT>
 
-Kein Wiederholungstest aufgrund zu weniger 5er.
+Überschrift 3. Levels:
 
-=== Git
+    ==== <TEXT>
 
+usw.
+
+==== *Bold* text
+Bold text, oder auch fetter Text kann mithilfe von * erreicht werden:
+
+    dazu ein *Beispiel*
+
+Der Text sieht dann wievolgt aus:
+
+dazu ein *Beispiel*
+
+==== Bilder:
+Bilder können in Asciidoc wiefolgt verwendet werden:
+
+    image::<DATEINAME>[]
+
+image::htl-leonding.png[]
+
+Einem Bild können verschiedenste Attribute mitgegeben werden:
+
+    image::<DATEINAME>[<BESCHREIBUNG>, <BREITE>, <HÖHE>
+
+TIP: Falls keine Breite, oder eine ungültige Breite angegeben wird, wird das Bild automatisch angepasst.
+
+image::htl-leonding.png[htl-leonding, 500]
+
+TIP: Die Beschreibung eines Bildes wird angezeigt, wenn der Browser keine Bilder unterstützt,
+oder das Bild nicht geladen werden kann.
+
+=== Admonitions
+Diese können verwendet werden, um gewisse Texte besonders auffällig dazustellen.
+
+Hierbei gibt es 5 verschiedene Admonitions. +
+Diese sehen wie folgt aus:
+
+==== NOTE:
+
+    NOTE: Dies ist ein Hinweiß
+
+NOTE: Dies ist ein Hinweiß
+
+==== TIP
+
+    TIP: Dies ist ein Tipp
+
+TIP: Dies ist ein Tipp
+
+==== IMPORTANT:
+
+    IMPORTANT: Wichtiger Hinweiß
+
+IMPORTANT: Wichtiger Hinweiß
+
+==== Warning:
+
+    WARNING: Eine Warnung
+
+WARNING: Eine Warnung
+
+===== CAUTION:
+
+    CAUTION: Bitte im Unterricht aufpassen!
+
+CAUTION: Bitte im Unterricht aufpassen!
+
+=== Code in Asciidoc:
+Code kann schnell und einfach in Asciidoc dargestellt werden. +
+in diesem Beispiel verwenden wir ein einfaches Java Programm,
+allerdings können viele weitere Sprachen damit dargestellt werden:
+
+    [source, java]
+    ----
+        class Main() {
+            public static void main(String[] args){
+              String s = "TEXT";
+              System.out.println(s);
+            }
+        }
+    ----
+
+[source, java]
+----
+    class Main() {
+        public static void main(String[] args){
+          String s = "TEXT";
+          System.out.println(s);
+        }
+    }
+----
+
+Zuerst wird angegeben, um wass es sich genau handelt:
+
+    [source, java]
+
+In diesem Fall ist es source code, in der Programmiersprache Java.
+
+dann wird ein Codeblock erstellt:
+
+    ----
+    ----
+
+zwischen diesen Codeblock kommt dann der Sourcecode hin.
+
+=== Callouts
+Mithilfe von Callouts können gewisste Codestücke markiert werden. Diese kommen in der folgenden Syntax: +
+in diesem Beispiel werden die "" dafür verwendet, um zu verhindern, dass adoc diese in Callouts umwandelt.
+
+    "//<1>"
+    "//<2>"
+
+Diese können aber auch automatisch nummeriert werden:
+
+    "//<.>"
+    "//<.>"
+
+Diese können dann einfach in Codeblöcke einfgefügt werden, und darunter kommentiert werden:
+
+    [source, java]
+    ----
+        class Main() {
+            public static void main(String[] args){
+              String s = "TEXT"; //"<.>"
+              System.out.println(s); //"<.>"
+            }
+        }
+    ----
+    <.> Erstellen eines Textes
+    <.> Ausgeben des oben erstellten Textes
+
+Dieses Beispiel sieht dann so aus:
+
+[source, java]
+----
+    class Main() {
+        public static void main(String[] args){
+          String s = "TEXT"; //<.>
+          System.out.println(s); //<.>
+        }
+    }
+----
+<.> Erstellen eines Textes
+<.> Ausgeben des oben erstellten Textes
+
+
+
+
+
+
+
+
+
+
+== GIT
+Git is das am weitesten verbreitetste vcs (version control system). Es wurde von
+https://en.wikipedia.org/wiki/Linus_Torvalds[Linus Torvalds] (dem Entwickler von Linux) entwickelt, aus mehreren Gründen.
+
+Das git System ist heutzutage nicht mehr aus der Entwicklung wegzudenken und gehört damit zu einem
+der Grundkenntnisse des Programmierens.
+
+Die Bekannteste Platform für das Git system ist https://github.com/[Github].
+
+=== GIT Befehle
+Git wird oft mithilfe einer Commandline verwendet. Um das Git System zu verstehen,
+sollten wir die wichtigsten Befehle aus diesem kennen:
+
+
+==== GIT clone
+Mithilfe des GIT clone Befehles kann man ein Repository von dem Server herunterladen. +
+Ein Beispiel dafür könnte wie folgt aussehen:
+
+    git clone <LINK>
+
+=== GIT status
 Status des GitRepositories:
 
     git status
     git status -s [For better file overview]
 
+==== GIT pull
+Mithilfe des pulls kann man sich alle Abänderungen, die auf dem remote Repository passieren, herunterladen.
+Hierbei kann es allerdings zu Konflikten kommen.
+
+    git pull
+
+==== GIT commit
+Commit fügt die Dateien in die staging area ein. +
+Dieser benötigt mindestens ein Kommentar, welches mithilfe von -m eingefügt werden kann.
+
+    git commit -m "<KOMMENTAR>"
+
+IMPORTANT: vor dem commit *immer* immer einen pull machen.
+
+==== GIT restore
+Git restore kann gewisse Files zurück auf den Status setzten, die diese am Remote Repository haben. +
 Git restore staged Files (unstaging):
 
-    git restore --staged .["." für alle Dateien]
+    git restore --staged <FILE>
 
-verstehen des Git staging Systems
+Wenn alle dateien um Repository betroffen seinen sollten, dann kann man stadt dem Filenamen einen "." schreiben.
+Damit werden alle Dateien ausgewählt.
 
-zum Hinzufügen eines Files in ein Git System
+==== GIT add
+Dateien müssen, bevor diese mit dem Git system kontrolliert werden, zu diesem hinzugefügt werden.
+Dies funktioniert mit dem Befehlt git add.
 
     git add <FILENAME>
 
-Staging in Git:
+um alle neuen Dateien zu dem vcs (Version control system) hinzuzufügen, kann folgender Befehl verwendet werden:
 
-    -> auswählen welche Dateien und Verzeichnisse ins Repo gesichert werden sollten
+    git add .
 
-Änderungen bis zu m letzten Commit zurücksetzen:
-
-    git restore .
-    git restore <FILE>
-
-Löschen neu erstellter Files:
+==== GIT clean
+Mithilfe von git clean kann man alle Dateien löschen, die nicht im Git system drinnen sind. +
+Hierbei verwendet man gerne -f, um dies zu erzwingen.
 
     git clean -f
 
-== 14.12.2021
+==== GIT push
+Mithilfe von git push werden alle Abänderungen auf das remote repository (auf den Server) geladen. Hierbei muss
+man auf eine gültige Anmeldung achten.
 
-Origin hinzufügen mit
-
-    git origin add <LINK>
-
-=== Git Branches
-Branches sind pointer auf den letzen Commit des Master branches +
-ein Repository kann beliebig viele Branches haben. +
-
-== Lecture 21.12.2021
-
-=== Github Keygen
-
-mithilfe von SSH keys:
-
-    ssh-keygen -t rsa
-    ssh-add ~/.ssh/<KEYNAME (id_rsa)>
-    git config --global user.name "<YOUR USERNAME>"
-    git config --global user.email "<YOUR EMAIL">
-
-== GIT:
-
-neuen Ordner erstellen und erneut Klonen
-
-    mkdir work
-    cd work
-    git clone <LINK>
-
-File im Directory abändern:
-
-    gedit readme.md
-    <ändern des files>
-    git commit -m "test merge"
     git push
 
-Andere Person nun auf dem repo:
-
-    git status
-
-man bemerkt, dass das Repo nicht auf dem aktuellen Stand ist +
-updaten des Repos:
-
-    git pull
-
-mit diesen Command laded man alle Abänderungen in den
-Dateien des remote repos herunter.
-
-Person 2 editiert dann die Datei, committed und pusht
-
-    echo "Person 2 edit" >> readme.md
-    git commit -m "update readme.md - Person 2"
-    git push
-
-Person 1 ladet nun wieder die Abänderungen herunter
-
-    git pull
-
-nun ändern beide Personen die Datei readme.md ab. +
-beide Personen:
-
-    git add
-    git commit -m "merge test2"
-    git push
-
-bei einer Person wird der push rejected, da das Remote
-repo Änderungen beinhaltet, die noch nicht existieren. +
-Daher braucht man git stash:
+==== GIT stash
+Git stash verstecke alle Abänderungen, die im lokalen Repository passiert sind.
 
     git stash
 
-aufgrund des Commites kann stash nicht ausgeführt werden.
+Um diese dann wieder hervorzuholen, kann man folgenden Befehl verwenden:
 
-IMPORTANT: vor dem commit *IMMER* einen pull machen
+    git stash pop
 
-Öffnen des Repos in IntelliJ für einen Merge +
-Mergeconflikte sind auf der Commandline eher schwer zu machen,
-daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).
+Dies kann nützlich sein, wenn es beim pullen zu Konflikten kommt. (Dazu noch später mehr)
 
-Man kann dafür auch andere Programme verwenden, z.B Github desktop
+=== Konflikte
+Im Git system kann es zu konflikten kommen, wenn mehrere Personen eine Datei an der selben Stelle bearbeiten,
+und diese Änderungen dann zusammengefasst werden sollten.
 
-== 23.12.2021 GIT Merge
+Es gibt mehrere Möglichkeiten, diese Probleme zu lösen.
 
-=== idea . Command:
+==== Merge
+Merge ist die wahrscheinlich eleganteste und weit verbreitetste Methode. Hierbei sagt der User dem Git system,
+wohin die Änderungen kommen, und welche der Optionen zuerst kommt.
 
-Öffnen eines Ordners mit den Command "idea .":
+Dies kann auf der Commandline allerdings sehr schwierig sein, daher verwendet man dazu gerne Programme wie
+https://www.jetbrains.com/idea/[IntelliJ], https://code.visualstudio.com/[Visual Studio Code]
+https://desktop.github.com/ [oder Github Desktop]. Hierbei gibt es allerdings viele weitere Anbieter.
 
-IMPORTANT: Alle Jetbrains Produkte über die Toolbox installieren
+Hierbei wird das Projekt einfach gepullt, und das Programm erkennt automatisch den Konflikt,
+und fragt den User, wie es damit umgehen sollte.
 
-    Toolbox settings
-    > Tools
-    > generate shell scripts auf on
-    > Ordner: /home/idea-scripts
-    Apply
-
-im Ordner /home/idea-scripts sollten nun die Scripts generiert worden sein.
-
-=== Git Merge mit IntelliJ:
+Ein git Merge mit IntelliJ sieht wie folgt aus:
 
     git pull (blauer Pfeil)
     mergen
     dann auf dem Interface auswählen bis alles passt
 
-IMPORTANT: HÜ: OraVM hinbekommen und dokumentieren
-////
-=== GIT Merge 2 (Mitschrift Thomas Spindler)
-11.01.2022
+==== Stash
+Git stash ist das einfacher System der beiden. Hierbei werden die Abänderungen vor dem Pullen "versteckt".
+Damit kann man dann alle Abänderungen problemlos pullen. +
+Dies kann mit den folgenden Befehlen ausgeführt werden:
 
-Alle pullen das aktuelle Repo
+----
+    git stash //<.>
+    git pull //<.>
+    git stash pop //<.>
+----
+<.> verstecken der Abänderungen
+<.> Herunterladen der Änderungen aus dem remote Repositroy
+<.> hervorholen der Änderungen
 
-    git pull
+Hierbei werden diese Probleme problemlos behoben, und man kann mit dem Programmieren fortfahren.
 
-dann ändern alle die Selbe Zeile ab.
-Und diese commiten und pushen dann alle die Abänderungen auf das Repo:
+=== GIT branches
+Branches sind pointer auf den letzten Commit des Master branches +
+ein Repository kann beliebig viele Branches haben. +
 
-    git commit -m "<MESSAGE>"
-    git push
+Diese werden verwendet, um z.B. ein gewisses Feature in eine Software einzubauen, währenddessen sich diese
+allerdings weiterentwickelt.
 
-Daraufhin entsteht ein Mergekonflint. Das Pushen wird nur bei einer Person funktionieren.
 
-==== GIT stash:
 
-Stashen mithilfe von:
 
-    git stash
 
-Dies funktioniert nicht, da wir gepullt haben. Git stash muss vor dem pull ausgeführt werden.
 
-'''
 
-Alle pullen das aktuelle Repo
 
-    git pull
+== Softwareentwicklung Theorien
+=== Notationen
+|===
+|Notation |Beispiel
 
-dann ändern alle die Selbe Zeile ab.
-Eine Peron pusht dann auf das Repo:
+|PascalCase
+|NetworkController
 
-    git commit -m "<MESSAGE>"
-    git push
+|CamelCase
+|networkController
 
-Bei der anderen Person, stashen wir zuerst die Änderungen, und dann pullen wir alles vom remote Repo.
+|SnakeCase
+|network_controller
 
-    git stash
-    git pull
+|KebabCase
+|network-controller
+|===
 
-Hiermit verstecken wir alle unsere aktuellen Änderungen, und speichere diese Abänderungen zwischen
-Dann hohlen wir uns die neuesten Änderungen vom Repo. +
-Mit dem folgenden Command holen wir die Änderungen wieder zurück:
+=== Multiplizität
 
-    git stash pop
+* Es gibt 2 Arten:
+** Multiplizität i.S.v
+*** Eine Klasse kann 0 Instanzen haben -> Utility-Klasse
+*** Eine Klasse kann ein Objekt haben -> Singleton
+*** Eine Klasse kann mehrere Objekte instanzieren
 
-Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikte zu verhindern. +
-Dies kann auch in IntelliJ automatisiert werden.
-
-    > settings
-    > git
-    > Explicitly check for incoming commits on remotes: always
-////
-
-=== Git stash
-
-2 Leute klonen ein Git Repository und ändern in einem beliebigen File eine bestimmte Zeile ab. +
-Wir haben bereits gelernt, dass man die Abänderungen mergen kann, allerdings werden wir uns in dieser Übung stash verwenden.
-
-Eine der Personen push dann die Abänderungen auf das aktuelle Repository:
-
-    git commit -m "<MESSAGE>"
-    git push
-
-Hiermit haben wir einen Konflikt erstellt.
-
-Die andere Person "versteckt" nun ihre Abänderungen, mithilfe von git stash, und pullt dann die Abänderungen vom remote Repo.
-
-    git stash
-    git pull
-
-Danach holen wir die Abänderungen wieder zurück:
-
-    git stash pop
-
-Dann können wir ohne weitere Probleme commiten und pushen.
-
-IMPORTANT: Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern. Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
-
-image::IntelliJ-auto-git-pulls.jpg[]
-
-deamon = Programm, dass im Hintergrund rennt +
-JGit = github commands von Java verwenden.
-
-=== Weitere Git Übungen:
-
-    git pull
-
-=== .idea ordner entfernen:
-
-    rm -rf .idea
-    git add ..idea
-
-kann verkürtzt werden auf:
-
-    git rm -rf .idea
-
-dann pullen, comitten und pushen
-
-    git status
-    git add .gitignore
-    git commit -m "Remove idea folder"
-    git push
-
-ins Gitignore einfügen:
-
-    .idea/
-    *.iml
-    target/
-
-dann committen und pushen
-
-    git add .
-    git status
-    git commit -m "Remove idea folder from project"
-    git push
-
-=== Branchen:
-
-den aktuellen Branch immer aktuell halten mithilfe von:
-
-    git merge main
-
-Dies updated alle changes des aktuellen branches mit dem main branch.
-
-[plantuml, git-merge]
+** Multiplizität i.S.v
+*** einer Kardinalität bei Datenbanken
++
+[plantuml,kardinalitaet,png]
 ----
 @startuml
 skinparam backgroundColor transparent
 skinparam shadowing false
 
-
-
+left to right direction
+Person "1" <--- "0..*" Haustier : besitzt >
 @enduml
 ----
 
-neuen branch erstellen (name ist feature)
+=== Phasen der SoftwareEntwicklung
+Es gibt das V und das Wasserfall Modell. +
+V-Modell: angeordnet wie ein V (V-modell ) +
+Arm 1:
 
-    git branch feature
+    WAS? (Plichtenheft)
+    WIE? (Grobentwurf, Feinentwurf)
+    Ich mache (Implementierung)
 
-auf den Branch wechseln:
+Arm 2: (rechte seit)
 
-    git switch feature
+    Intergrationstest
+    Systemtest
+    Abnahme
 
-Branch überprüfen:
+image::V-Modell.png[V-modell, 500]
 
-    git status
 
-Dann ein File abändern.
-Feature Branch immer wie folgt benennen:
 
-    feature/<NAME DES FEATURES>
 
-checkout ist die alte Bezeichnung für switch.
 
-branch feature in main mergen:
 
-    git checkout main
-    git merge feature
 
-dann den Branch löschen
 
-    git switch main
-    git branch -d feature
+== Maven
 
-== Java Versionen:
+=== Semantische Versionierung
 
-Architye: Quelle / Vorbild
+https://semver.org/lang/de/[Dokumentation]
 
-- Java ME: Java mobile (tot)
+* z.B 5.3.2
+** 5 -> Major-Version
+** 3 -> Minor-Version
+** 2 -> Patch
 
-- Java SE: Java standard edition (für Desktop)
+Auf Grundlage einer Versionsnummer von MAJOR.MINOR.PATCH werden die einzelnen Elemente folgendermaßen erhöht:
 
-- Java EE: Java Enterprise:
-    - zusätzliche Libraries für verteilte Systeme
-    - Verwenden von Java App Servern (programmiere auf Servern)
-    - nun Jakarte EE
-    - microprofile:
-        - neue App!
-        - daraus Entwicklungen:
-            - Quarkus
-            - Helidon
-            - micronaut
+* MAJOR wird erhöht, wenn API-inkompatible Änderungen veröffentlicht werden,
+* MINOR wird erhöht, wenn neue Funktionalitäten, welche kompatibel zur bisherigen API sind, veröffentlicht werden, und
+* PATCH wird erhöht, wenn die Änderungen ausschließlich API-kompatible Bugfixes umfassen.
 
-Rest API: Internet für Maschinen (verwendet HTTP)  +
-HTML / HTTP: Internet für Menschen
+Außerdem sind Bezeichner für Vorveröffentlichungen und Build-Metadaten als Erweiterungen zum MAJOR.MINOR.PATCH Format verfügbar.
 
-Java properties
+=== XML
 
-Grundelemente des Programmierens:
+* Extensible Markup Language
+* vergleichbar mit HTML
+** es gibt Anfangs- und Ende-Tags
+** allerdings kann ich meine eigenen Tags verwenden
+* Mit Parsern (Syntaxanalysatoren) kann man XML-Files gut lesen
 
-. Sequenz
-. Schleifen
+=== pom.xml
 
-== PlantUML (Mitschrift Thomas Spindler)
+* ist deklarativ (nicht imparativ)
+* Das Projektergebnis wird beschrieben und nicht der Weg dorthin.
+
+
+
+
+
+
+
+
+
+== PlantUML
 PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
 
 === Umgebungen
@@ -462,7 +532,7 @@ HelloWorld:This is a description
 @enduml
 ----
 
-==== If-statements
+==== If-Statements
 If Statements in PlantUML darstellen:
 
     @startuml
@@ -509,69 +579,6 @@ start
 stop
 @enduml
 ----
-=== PlantUML 2 (20.01.2022)
-
-[plantuml, ucd1, png]
-----
-@startuml
-left to right direction
-actor "driver" as fc
-rectangle PKW {
-    usecase "transportsgoods" as UCGOODS
-    usecase "transport persons" as UCPERSON
-    usecase "cruice" as UCCRUICE
-}
-fc -- UCGOODS
-fc -- UCPERSON
-fc -- UCCRUIS
-@enduml
-----
-
-TIP: In Plantuml kann man verschiedene Themes verwenden,
-damit die Ergebnisse unterschiedliche Styles haben.
-
-=== Callouts
-
-[source, java]
-----
-    class Main() {
-        public static void main(String[] args){
-          String s = "TEXT"; //<.>
-          System.out.println(s); //<.>
-        }
-    }
-----
-<.> Erstellen eines Textes
-<.> Ausgeben des oben erstellten Textes
-
-=== Admonitions
-
-TIP: Lernen Sie die Fachbegriffe
-
-IMPORTANT: Damit Sie gut googeln können
-
-=== Phasen der SoftwareEntwicklung
-Es gibt das V und das Wasserfall Modell. +
-V-Modell: angeordnet wie ein V (V-modell ) +
-Arm 1:
-
-    WAS? (Plichtenheft)
-    WIE? (Grobentwurf, Feinentwurf)
-    Ich mache (Implementierung)
-
-Arm 2: (rechte seit)
-
-    Intergrationstest
-    Systemtest
-    Abnahme
-
-image::V-Modell.png[]
-
-Fakturer: Ein Rechnungs-erstellungs Programm
-
-Seiten wichtig: 17, 27, 28, 45,
-Seite nicht wichtig: 18, 19, 22, 49 - 50
-Kaptiel UML: complience Level lernen (S. 74)
 
 === Beispiel aus dem Unterricht
 Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
