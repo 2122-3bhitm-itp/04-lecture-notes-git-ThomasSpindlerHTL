@@ -7,6 +7,7 @@ ifndef::imagesdir[:imagesdir: images]
 :icons: font
 :sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
+:stylesheet: ./css/dark.css
 
 === Mitschrift direkt aus dem Unterricht
 IMPORTANT: Dies ist eine schön zusammengefasste und sortierte Mitschrift. Die Mitschrift aus dem Unterricht befindet sich https://2122-3bhitm-itp.github.io/04-lecture-notes-git-ThomasSpindlerHTL/asciidocs/notes.html[hier].
@@ -72,6 +73,19 @@ Bold text, oder auch fetter Text kann mithilfe von * erreicht werden:
 Der Text sieht dann wievolgt aus:
 
 dazu ein *Beispiel*
+
+==== _Cursive_ text
+Kursiver Text kann mithilfe von _ erzielt werden:
+
+    _kursiver_ text
+
+_kursiver_ text
+
+diese können auch wie folgt kombiniert werden
+
+    *_Beispiel_*
+
+*_Beispiel_*
 
 ==== Bilder:
 Bilder können in Asciidoc wiefolgt verwendet werden:
@@ -324,10 +338,11 @@ Git stash ist das einfacher System der beiden. Hierbei werden die Abänderungen 
 Damit kann man dann alle Abänderungen problemlos pullen. +
 Dies kann mit den folgenden Befehlen ausgeführt werden:
 
+[source, cmd]
 ----
-    git stash //<.>
-    git pull //<.>
-    git stash pop //<.>
+git stash //<.>
+git pull //<.>
+git stash pop //<.>
 ----
 <.> verstecken der Abänderungen
 <.> Herunterladen der Änderungen aus dem remote Repositroy
@@ -580,12 +595,247 @@ stop
 @enduml
 ----
 
-=== Beispiel aus dem Unterricht
-Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
+Nun können wir alle oben erlernten Technologien in ein Beispiel umsetzen +
 
 .Beispiel aus dem Unterricht:
 [plantuml,demo-cld]
 ----
 @startuml
 include::plantuml/plantuml-example-1.puml[]
+----
+
+Mithilfe diesen Beispieles wurde uns PlantUML erklärt.
+
+=== Usecase - Diagramm
+Usecases können Beschreiben, wofür man ein Objekt verwenden kann. +
+Beispiel für usecases eines PKWs:
+
+    @startuml
+    usecase "transport goods"
+    usecase "transport persons"
+    @enduml
+
+[plantuml, usecases]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+usecase "transport goods"
+usecase "transport persons"
+@enduml
+----
+
+==== Actors:
+Um Personen auf Diagrammen darzustellen, kann man Actors verwenden
+
+    @startuml
+    actor "driver"
+    @enduml
+
+[plantuml, actors]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+left to right direction
+
+scale 1.3
+
+actor "driver"
+@enduml
+----
+
+==== Rectangles
+Rectagles können verwendet werden, um Darstellungen übersichtlicher zu machen
+
+    @startuml
+    rectangle PKW {
+        usecase "transport"
+    }
+    @enduml
+
+[plantuml, rectangles]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+rectangle PKW {
+    usecase "transport"
+}
+@enduml
+----
+
+==== Verlinkungen
+2 Objekte in PlantUML können mithilfe von Links miteinander verbunden werden. Dies kann mit der Syntax <OBJEKT1> -- <OBJEKT2> erzeilt werden.
+
+    @startuml
+    actor "driver" as fc
+    usecase "drives car" as UCGOODS
+    fc -- UCGOODS
+    @enduml
+
+[plantuml, links]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+left to right direction
+
+actor "driver" as fc
+usecase "drives car" as UCGOODS
+
+fc -- UCGOODS
+
+@enduml
+----
+
+Wenn wir nun alle oben hergezeigten Sachen verwenden, bekommt man folgendes Beispiel:
+
+
+[plantuml, ucd1, png]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+left to right direction
+
+actor "driver" as fc
+rectangle PKW {
+    usecase "transports goods" as UCGOODS
+    usecase "transport persons" as UCPERSON
+    usecase "cruise" as UCCRUISE
+}
+fc -- UCGOODS
+fc -- UCPERSON
+fc -- UCCRUISE
+@enduml
+----
+
+=== Formatierungen
+PlantUML unterstützt verschiedenste Möglichkeiten, Formatierungen zu verwenden. +
+Diese können einfach, aber auch sehr komplex werden.
+
+https://plantuml.com/theme[PlantUML formatierungen]
+
+==== Direction
+Mithilfe von direction kann man bestimmen, in welche Richtung das Diagramm gezeichnet werden sollte.
+
+[source,plantuml]
+----
+@startuml
+left to right direction<.>
+
+actor "driver" as fc
+usecase "drives car" as UCGOODS
+
+fc -- UCGOODS
+@enduml
+----
+<.> mit diesem Parameter geben wir an, dass die Zeichnungsrichtung von links nach rechts ist.
+
+Dies sieht dann wie folgt aus:
+
+[plantuml, directions]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+left to right direction
+
+actor "driver" as fc
+usecase "drives car" as UCGOODS
+
+fc -- UCGOODS
+
+@enduml
+----
+
+Wenn man dies nicht verwenden würde, dann würde die Grafik so aussehen:
+
+[plantuml, directionsNoDirection]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+actor "driver" as fc
+usecase "drives car" as UCGOODS
+
+fc -- UCGOODS
+
+@enduml
+----
+
+==== Skinparam
+Mithilfe von Skinparam kann man weitere elemente anpassen.
+
+Hiermit kann man z.B. die Hintergrundfarbe verändern:
+
+[source,plantuml]
+----
+@startuml
+skinparam backgroundColor Khaki
+
+:Hello World;
+@enduml
+----
+
+[plantuml,skinparam-background]
+----
+@startuml
+skinparam backgroundColor Khaki
+
+:Hello World;
+@enduml
+----
+
+Die formatierung "backgroundColor transparent" und "shadowing false" wurden für alle oberen Beispiele verwendet +
+(um den Darkmode in z.B. IntelliJ zu unterstützen)
+
+Eine Liste aller Skinparam Befehle kann https://plantuml.com/skinparam[hier] gefunden werden
+
+==== Scale
+Mithilfe von Scale kann man die Größe des Diagrams anpassen.
+
+[source, plantuml]
+----
+@startuml
+scale 2
+
+:Hello World;
+@enduml
+----
+
+Zahlen > 1 vergrößern die Grafik +
+Zahlen < 1 verkleinern die Grafik
+
+.Vergrößerte Grafik (scale 3)
+[plantuml,scale-big]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+scale 3
+
+:Hello World;
+@enduml
+----
+
+.Verkleinerte Grafik (scale 0.5)
+[plantuml,scale-small]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+scale 0.5
+
+:Hello World;
+@enduml
 ----

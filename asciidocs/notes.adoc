@@ -7,6 +7,7 @@ ifndef::imagesdir[:imagesdir: images]
 :icons: font
 :sectnums:    // Nummerierung der Überschriften / section numbering
 :toc: left
+:stylesheet: ./css/dark.css
 
 == 02.12.2021
 
@@ -514,6 +515,9 @@ stop
 [plantuml, ucd1, png]
 ----
 @startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
 left to right direction
 actor "driver" as fc
 rectangle PKW {
