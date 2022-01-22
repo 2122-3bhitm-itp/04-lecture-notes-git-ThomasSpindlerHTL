@@ -322,7 +322,7 @@ wohin die Änderungen kommen, und welche der Optionen zuerst kommt.
 
 Dies kann auf der Commandline allerdings sehr schwierig sein, daher verwendet man dazu gerne Programme wie
 https://www.jetbrains.com/idea/[IntelliJ], https://code.visualstudio.com/[Visual Studio Code]
-https://desktop.github.com/ [oder Github Desktop]. Hierbei gibt es allerdings viele weitere Anbieter.
+https://desktop.github.com/[oder Github Desktop]. Hierbei gibt es allerdings viele weitere Anbieter.
 
 Hierbei wird das Projekt einfach gepullt, und das Programm erkennt automatisch den Konflikt,
 und fragt den User, wie es damit umgehen sollte.
@@ -595,6 +595,7 @@ stop
 @enduml
 ----
 
+==== Beispiel
 Nun können wir alle oben erlernten Technologien in ein Beispiel umsetzen +
 
 .Beispiel aus dem Unterricht:
@@ -755,6 +756,7 @@ fc -- UCGOODS
 @enduml
 ----
 
+==== Beispiel
 Wenn man dies nicht verwenden würde, dann würde die Grafik so aussehen:
 
 [plantuml, directionsNoDirection]
