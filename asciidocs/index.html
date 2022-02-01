@@ -130,7 +130,7 @@ a {
 <div class="details">
 <span id="author" class="author">Thomas Spindler</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2022-01-23</span>
+<span id="revdate">2022-02-01</span>
 <br><span id="revremark">ITP</span>
 </div>
 <div id="toc" class="toc2">
@@ -160,6 +160,7 @@ a {
 <li><a href="#_notationen">4.1. Notationen</a></li>
 <li><a href="#_multiplizität">4.2. Multiplizität</a></li>
 <li><a href="#_phasen_der_softwareentwicklung">4.3. Phasen der SoftwareEntwicklung</a></li>
+<li><a href="#_vererbung">4.4. Vererbung</a></li>
 </ul>
 </li>
 <li><a href="#_maven">5. Maven</a>
@@ -889,6 +890,67 @@ ein Repository kann beliebig viele Branches haben.<br></p>
 <p>Diese werden verwendet, um z.B. ein gewisses Feature in eine Software einzubauen, währenddessen sich diese
 allerdings weiterentwickelt.</p>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Branches nicht auf Personen, sondern Features!
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_übung_git_branches">3.4.1. Übung GIT branches:</h4>
+<div class="paragraph">
+<p>Folgendes Programm wird implementiert:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/java-programm0.png" alt="java programm0" width="221" height="185">
+</div>
+</div>
+<div class="paragraph">
+<p>Hierfür werden für die folgenden Features eigene Branches verwendet:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>feature/teacher
+feature/student</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>jede Person arbeitet an einem Branch ihr eigenes Feature aus.</p>
+</div>
+<div class="paragraph">
+<p>zuerst checken, dass der Master up to date ist. Dann kann man die branches mergen,<br>
+und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist)<br>
+daraufhin wieder in den master wechseln, und ebenfalls wieder mergen</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git checkout master
+git merge feature/teacher
+git push</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Und dann können beide Branches sowohl auf dem Remote wie auch auf dem lokalen Repo gelöscht werden.<br>
+lokales Repo:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>git branch -d feature/teacher
+git branch -d feature/student</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Auf dem remote Branch können diese einfach über das Webinterface gelöscht werden.<br>
+Alle Abänderungen können nun auf dem origin master gefunden werden.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1000,6 +1062,41 @@ Abnahme</pre>
 <div class="imageblock">
 <div class="content">
 <img src="images/V-Modell.png" alt="V-modell" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/v-modell-tafel.jpeg" alt="V-Modell Tafel" width="250"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vererbung">4.4. Vererbung</h3>
+<div class="paragraph">
+<p>Vererbung von Klassen:<br>
+A und Besitzen jeweils eine Eigenschaft.<br>
+Hierbei wichtig ist, dass B von A erbt.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vererbung-basics.png" alt="vererbung basics" width="197" height="97">
+</div>
+</div>
+<div class="paragraph">
+<p>B besitz daraufhin beide Eigenschaften:<br>
+(keine korrekte Darstellung der Klasse, nur symbolisch!)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vererbung-basics-ex2.png" alt="vererbung basics ex2" width="68" height="115">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vererbung.png" alt="Vererbung" width="200">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/verebung-tafel.jpg" alt="Vererbung Tafel" width="200">
 </div>
 </div>
 </div>
@@ -1468,7 +1565,7 @@ Zahlen &lt; 1 verkleinern die Grafik</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-01-23 00:09:42 +0100
+Last updated 2022-02-01 22:43:41 +0100
 </div>
 </div>
 </body>

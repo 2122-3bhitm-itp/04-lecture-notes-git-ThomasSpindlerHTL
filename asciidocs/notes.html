@@ -8,118 +8,118 @@
 <meta name="author" content="Thomas Spindler">
 <title>Lecture Notes / 3BHITM / ITP</title>
 <style>
-/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
-
-@import url(//fonts.googleapis.com/css?family=Noto+Sans);
-@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
-
-/* CUSTOMISATIONS */
-/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
-:root{
---maincolor:#282c34;
---primarycolor:#f39c12;
---secondarycolor:#03a9f4;
---tertiarycolor:#4db6ac;
---sidebarbackground:#21252b;
---linkcolor:#f44336;
---linkcoloralternate:#ff9800;
---white:#FFFFFF;
-}
-
-/* custom added styles */
-.listingblock > .content > pre{
-  background: var(--sidebarbackground);
-  color: var(--white);
-}
-
-/* Text styles */
-body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
-
-h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
-h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
-.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
-p{font-family: "Noto Sans",sans-serif ! important}
-#toc.toc2 a:link{color:var(--linkcolor);}
-blockquote{color:var(--tertiarycolor) !important}
-.quoteblock{color:var(--white)}
-code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
-
-
-/* Table styles */
-th{background-color: var(--maincolor);color:var(--white) !important;}
-td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
-
-
-#toc.toc2{background-color:var(--sidebarbackground);}
-#toctitle{color:var(--white);}
-
-/* Responsiveness fixes */
-video {
-  max-width: 100%;
-}
-
-@media all and (max-width: 600px) {
-  table {
-    width: 55vw!important;
-    font-size: 3vw;
-  }
-}
-
-.exampleblock > .content {
-  background-color: var(--maincolor);
-}
-
-a {
-  color: var(--secondarycolor);
-}
-
-.admonitionblock td.icon .icon-tip::before {
-  text-shadow: none;
-  color: var(--white);
-}
-.admonitionblock td.icon .icon-note::before {
-  color: var(--tertiarycolor);
-}
-.admonitionblock td.icon .icon-important::before {
-  color: var(--linkcolor);
-}
-/*.admonitionblock td.icon .icon-caution::before {
-  color: var(--linkcoloralternate);
-}*/
-.admonitionblock td.icon .icon-warning::before {
-  color: var(--primarycolor);
-}
-
-#preamble > .sectionbody > .paragraph:first-of-type p {
-  color: var(--white);
-}
-
-.quoteblock blockquote::before {
-  color: var(--primarycolor);
-}
-.quoteblock .attribution cite, .verseblock .attribution cite {
-  color: var(--white);
-}
-.verseblock pre {
-  color: var(--white);
-}
-.quoteblock blockquote, .quoteblock blockquote p {
-  color: var(--white);
-}
-
-.sidebarblock {
-  background: var(--sidebarbackground);
-}
-.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
-  background: var(--sidebarbackground);
-  color: var(--white);
-}
-
-#header .details {
-  color: var(--white);
-}
-#header .details span.email a {
-  color: var(--linkcoloralternate);
+/* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+
+@import url(//fonts.googleapis.com/css?family=Noto+Sans);
+@import url(https://cdn.jsdelivr.net/gh/asciidoctor/asciidoctor@2.0/data/stylesheets/asciidoctor-default.css); /* Default asciidoc style framework - important */
+
+/* CUSTOMISATIONS */
+/* Change the values in root for quick customisation. If you want even more fine grain... venture further. */
+:root{
+--maincolor:#282c34;
+--primarycolor:#f39c12;
+--secondarycolor:#03a9f4;
+--tertiarycolor:#4db6ac;
+--sidebarbackground:#21252b;
+--linkcolor:#f44336;
+--linkcoloralternate:#ff9800;
+--white:#FFFFFF;
+}
+
+/* custom added styles */
+.listingblock > .content > pre{
+  background: var(--sidebarbackground);
+  color: var(--white);
+}
+
+/* Text styles */
+body{font-family: "Noto Sans",sans-serif;background-color: var(--maincolor);color:var(--white);}
+
+h1{color:var(--primarycolor) !important;font-family:"Noto Sans",sans-serif;}
+h2,h3,h4,h5,h6{color:var(--secondarycolor) !important;font-family:"Noto Sans",sans-serif;}
+.title{color:var(--white) !important;font-family:"Noto Sans",sans-serif;font-style: normal; font-weight: normal;}
+p{font-family: "Noto Sans",sans-serif ! important}
+#toc.toc2 a:link{color:var(--linkcolor);}
+blockquote{color:var(--tertiarycolor) !important}
+.quoteblock{color:var(--white)}
+code{color:var(--linkcoloralternate);background-color: var(--sidebarbackground) !important}
+
+
+/* Table styles */
+th{background-color: var(--maincolor);color:var(--white) !important;}
+td{background-color: var(--maincolor);color: var(--linkcoloralternate) !important}
+
+
+#toc.toc2{background-color:var(--sidebarbackground);}
+#toctitle{color:var(--white);}
+
+/* Responsiveness fixes */
+video {
+  max-width: 100%;
+}
+
+@media all and (max-width: 600px) {
+  table {
+    width: 55vw!important;
+    font-size: 3vw;
+  }
+}
+
+.exampleblock > .content {
+  background-color: var(--maincolor);
+}
+
+a {
+  color: var(--secondarycolor);
+}
+
+.admonitionblock td.icon .icon-tip::before {
+  text-shadow: none;
+  color: var(--white);
+}
+.admonitionblock td.icon .icon-note::before {
+  color: var(--tertiarycolor);
+}
+.admonitionblock td.icon .icon-important::before {
+  color: var(--linkcolor);
+}
+/*.admonitionblock td.icon .icon-caution::before {
+  color: var(--linkcoloralternate);
+}*/
+.admonitionblock td.icon .icon-warning::before {
+  color: var(--primarycolor);
+}
+
+#preamble > .sectionbody > .paragraph:first-of-type p {
+  color: var(--white);
+}
+
+.quoteblock blockquote::before {
+  color: var(--primarycolor);
+}
+.quoteblock .attribution cite, .verseblock .attribution cite {
+  color: var(--white);
+}
+.verseblock pre {
+  color: var(--white);
+}
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: var(--white);
+}
+
+.sidebarblock {
+  background: var(--sidebarbackground);
+}
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: var(--sidebarbackground);
+  color: var(--white);
+}
+
+#header .details {
+  color: var(--white);
+}
+#header .details span.email a {
+  color: var(--linkcoloralternate);
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -885,7 +885,7 @@ stop
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/hello-world.png" alt="hello world" width="109" height="54">
+<img src="images/hello-world.png" alt="hello world" width="105" height="56">
 </div>
 </div>
 <div class="paragraph">
@@ -900,7 +900,7 @@ HelloWorld:This is a description
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/hello-world2.png" alt="hello world2" width="152" height="62">
+<img src="images/hello-world2.png" alt="hello world2" width="144" height="64">
 </div>
 </div>
 </div>
@@ -922,7 +922,7 @@ endif
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/if-statement.png" alt="if statement" width="267" height="199">
+<img src="images/if-statement.png" alt="if statement" width="252" height="201">
 </div>
 </div>
 </div>
@@ -942,7 +942,7 @@ stop
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/start-stop.png" alt="start stop" width="105" height="135">
+<img src="images/start-stop.png" alt="start stop" width="102" height="137">
 </div>
 </div>
 </div>
@@ -951,7 +951,7 @@ stop
 <h3 id="_plantuml_2_20_01_2022">8.3. PlantUML 2 (20.01.2022)</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/ucd1.png" alt="ucd1" width="294" height="328">
+<img src="images/ucd1.png" alt="ucd1" width="281" height="331">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1065,7 +1065,7 @@ Kaptiel UML: complience Level lernen (S. 74)</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/demo-cld.png" alt="demo cld" width="265" height="307">
+<img src="images/demo-cld.png" alt="demo cld" width="251" height="311">
 </div>
 <div class="title">Figure 2. Beispiel aus dem Unterricht:</div>
 </div>
@@ -1077,7 +1077,7 @@ Kaptiel UML: complience Level lernen (S. 74)</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/java-programm0.png" alt="java programm0" width="226" height="183">
+<img src="images/java-programm0.png" alt="java programm0" width="221" height="185">
 </div>
 </div>
 <div class="paragraph">
@@ -1108,7 +1108,7 @@ Branches nicht auf Personen, sondern Features!
 </table>
 </div>
 <div class="paragraph">
-<p>zuerst checken, dass der Master up to date ist. Dann kannn man die branches mergen mithilfe von</p>
+<p>zuerst checken, dass der Master up to date ist. Dann kann man die branches mergen mithilfe von</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1117,7 +1117,7 @@ Branches nicht auf Personen, sondern Features!
 </div>
 <div class="paragraph">
 <p>und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist)<br>
-Daraufhin wieder in den master wechseln, und ebenfalls wieder mergen</p>
+daraufhin wieder in den master wechseln, und ebenfalls wieder mergen</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1147,7 +1147,7 @@ Alle Abänderungen können nun auf dem origin master gefunden werden.</p>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-02-01 08:50:46 +0100
+Last updated 2022-02-01 22:41:17 +0100
 </div>
 </div>
 </body>

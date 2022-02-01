@@ -357,6 +357,63 @@ ein Repository kann beliebig viele Branches haben. +
 Diese werden verwendet, um z.B. ein gewisses Feature in eine Software einzubauen, währenddessen sich diese
 allerdings weiterentwickelt.
 
+IMPORTANT: Branches nicht auf Personen, sondern Features!
+
+==== Übung GIT branches:
+Folgendes Programm wird implementiert:
+
+[plantuml, java-programm0]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+left to right direction
+
+abstract class Person {
+    firstname
+    lastname
+}
+
+class Student {
+    matnr
+}
+
+class Teacher {
+    salary
+    title
+}
+
+Person <|-- Teacher
+Person <|-- Student
+@enduml
+----
+
+Hierfür werden für die folgenden Features eigene Branches verwendet:
+
+    feature/teacher
+    feature/student
+
+jede Person arbeitet an einem Branch ihr eigenes Feature aus.
+
+
+zuerst checken, dass der Master up to date ist. Dann kann man die branches mergen, +
+und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist) +
+daraufhin wieder in den master wechseln, und ebenfalls wieder mergen
+
+    git checkout master
+    git merge feature/teacher
+    git push
+
+Und dann können beide Branches sowohl auf dem Remote wie auch auf dem lokalen Repo gelöscht werden. +
+lokales Repo:
+
+    git branch -d feature/teacher
+    git branch -d feature/student
+
+Auf dem remote Branch können diese einfach über das Webinterface gelöscht werden. +
+Alle Abänderungen können nun auf dem origin master gefunden werden.
+
 
 
 
@@ -421,6 +478,57 @@ Arm 2: (rechte seit)
 
 image::V-Modell.png[V-modell, 500]
 
+image:v-modell-tafel.jpeg[V-Modell Tafel, 250]
+
+=== Vererbung
+
+Vererbung von Klassen: +
+A und Besitzen jeweils eine Eigenschaft. +
+Hierbei wichtig ist, dass B von A erbt.
+
+[plantuml, vererbung-basics]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+left to right direction
+
+scale 1.3
+
+class A {
+    c
+}
+
+class B {
+    e
+}
+
+A <|-- B
+@enduml
+----
+
+B besitz daraufhin beide Eigenschaften: +
+(keine korrekte Darstellung der Klasse, nur symbolisch!)
+
+[plantuml, vererbung-basics-ex2]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+scale 1.3
+
+class B {
+    c
+    e
+}
+
+@enduml
+----
+
+image::vererbung.png[Vererbung, 200]
+image::verebung-tafel.jpg[Vererbung Tafel, 200]
 
 
 
