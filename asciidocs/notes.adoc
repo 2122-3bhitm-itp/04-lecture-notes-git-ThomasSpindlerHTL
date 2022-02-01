@@ -586,3 +586,64 @@ Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
 @startuml
 include::plantuml/plantuml-example-1.puml[]
 ----
+
+=== 25.02.2022
+2 Personen erstellen von folgenden Java-Programm:
+
+[plantuml, java-programm0]
+----
+@startuml
+skinparam backgroundColor transparent
+skinparam shadowing false
+
+left to right direction
+
+abstract class Person {
+    firstname
+    lastname
+}
+
+class Student {
+    matnr
+}
+
+class Teacher {
+    salary
+    title
+}
+
+Person <-- Teacher
+Person <-- Student
+@enduml
+----
+
+es werden 2 neue Git Branches erstellt:
+
+    feature/teacher
+    feature/student
+
+jede Person arbeitet an einem Branch ihr eigenes Feature aus.
+
+=== 01.02.2022
+
+IMPORTANT: Branches nicht auf Personen, sondern Features!
+
+zuerst checken, dass der Master up to date ist. Dann kannn man die branches mergen mithilfe von
+
+    git merge feature/student
+
+und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist) +
+Daraufhin wieder in den master wechseln, und ebenfalls wieder mergen
+
+    git checkout master
+    git merge feature/teacher
+    git push
+
+Und dann können beide Branches sowohl auf dem Remote wie auch auf dem lokalen Repo gelöscht werden. +
+lokales Repo:
+
+    git branch -d feature/teacher
+    git branch -d feature/student
+
+Auf dem remote Branch können diese einfach über das Webinterface gelöscht werden. +
+Alle Abänderungen können nun auf dem origin master gefunden werden.
