@@ -613,8 +613,8 @@ class Teacher {
     title
 }
 
-Person <-- Teacher
-Person <-- Student
+Person <|-- Teacher
+Person <|-- Student
 @enduml
 ----
 
@@ -629,12 +629,12 @@ jede Person arbeitet an einem Branch ihr eigenes Feature aus.
 
 IMPORTANT: Branches nicht auf Personen, sondern Features!
 
-zuerst checken, dass der Master up to date ist. Dann kannn man die branches mergen mithilfe von
+zuerst checken, dass der Master up to date ist. Dann kann man die branches mergen mithilfe von
 
     git merge feature/student
 
 und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist) +
-Daraufhin wieder in den master wechseln, und ebenfalls wieder mergen
+daraufhin wieder in den master wechseln, und ebenfalls wieder mergen
 
     git checkout master
     git merge feature/teacher
