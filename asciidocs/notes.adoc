@@ -527,7 +527,7 @@ rectangle PKW {
 }
 fc -- UCGOODS
 fc -- UCPERSON
-fc -- UCCRUIS
+fc -- UCCRUICE
 @enduml
 ----
 
@@ -585,6 +585,7 @@ Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
 ----
 @startuml
 include::plantuml/plantuml-example-1.puml[]
+@enduml
 ----
 
 === 25.02.2022
@@ -647,3 +648,16 @@ lokales Repo:
 
 Auf dem remote Branch können diese einfach über das Webinterface gelöscht werden. +
 Alle Abänderungen können nun auf dem origin master gefunden werden.
+
+== 03.02.2022
+
+NOTE: Unser Berufsbild: DevOps
+
+https://youtu.be/0yWAtQ6wYNM[Video dazu]
+
+[plantuml, tennis]
+----
+@startuml
+include::plantuml/cld-tennis.puml[]
+@enduml
+----
