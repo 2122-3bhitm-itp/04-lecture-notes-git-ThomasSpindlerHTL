@@ -661,3 +661,61 @@ https://youtu.be/0yWAtQ6wYNM[Video dazu]
 include::plantuml/cld-tennis.puml[]
 @enduml
 ----
+
+== 03.03.2022 Docker
+
+=== Post Installation steps:
+
+[source, bash]
+----
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+----
+
+Change owner of a directory, with all its contents:
+
+[source, bash]
+----
+sudo chwon -R ubuntu /opt
+----
+
+Docker run nginx:
+
+[source, bash]
+----
+docker run --name my-nginx -v ${PWD}/html:/usr/share/nginx/html:ro -d nginx:1.21.6
+----
+
+=== Docker Images:
+
+Docker images sind immutable, und mit ISOs zu vergleichen, +
+es sind die Vorlagen für Docker Container
+
+NOTE: Ein Docker Container ist nicht nur ein File, sondern auch ein Prozess.
+
+shell script Ausführrechte hinzufügen, dann ausführen
+
+[source, bash]
+----
+chmod +x start-nginx.sh
+bash start-nginx.sh
+
+#Container auflisten:
+docker container ls
+
+#Container stoppen:
+docker container stop my-nginx
+
+#Container starten:
+docker container start my-nginx
+
+#Container killen:
+docker kill my-nginx
+
+#Remove docker container:
+docker container rm b7b
+
+----
+
+NOTE: lezten Befehl mit sudo ausführen: sudo !!

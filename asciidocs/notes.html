@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="author" content="Thomas Spindler">
 <title>Lecture Notes / 3BHITM / ITP</title>
 <style>
@@ -130,7 +130,7 @@ a {
 <div class="details">
 <span id="author" class="author">Thomas Spindler</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2022-02-03</span>
+<span id="revdate">2022-03-03</span>
 <br><span id="revremark">ITP</span>
 </div>
 <div id="toc" class="toc2">
@@ -183,6 +183,12 @@ a {
 </ul>
 </li>
 <li><a href="#_03_02_2022">9. 03.02.2022</a></li>
+<li><a href="#_03_03_2022_docker">10. 03.03.2022 Docker</a>
+<ul class="sectlevel2">
+<li><a href="#_post_installation_steps">10.1. Post Installation steps:</a></li>
+<li><a href="#_docker_images">10.2. Docker Images:</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -1169,11 +1175,97 @@ Unser Berufsbild: DevOps
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_03_03_2022_docker">10. 03.03.2022 Docker</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_post_installation_steps">10.1. Post Installation steps:</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Change owner of a directory, with all its contents:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">sudo chwon -R ubuntu /opt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Docker run nginx:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">docker run --name my-nginx -v ${PWD}/html:/usr/share/nginx/html:ro -d nginx:1.21.6</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_docker_images">10.2. Docker Images:</h3>
+<div class="paragraph">
+<p>Docker images sind immutable, und mit ISOs zu vergleichen,<br>
+es sind die Vorlagen für Docker Container</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Ein Docker Container ist nicht nur ein File, sondern auch ein Prozess.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>shell script Ausführrechte hinzufügen, dann ausführen</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">chmod +x start-nginx.sh
+bash start-nginx.sh
+
+#Container auflisten:
+docker container ls
+
+#Container stoppen:
+docker container stop my-nginx
+
+#Container starten:
+docker container start my-nginx
+
+#Container killen:
+docker kill my-nginx
+
+#Remove docker container:
+docker container rm b7b</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+lezten Befehl mit sudo ausführen: sudo !!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-02-03 11:58:03 +0100
+Last updated 2022-03-03 11:54:58 +0100
 </div>
 </div>
 </body>
