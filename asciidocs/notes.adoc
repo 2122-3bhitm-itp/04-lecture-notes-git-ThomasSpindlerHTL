@@ -719,3 +719,74 @@ docker container rm b7b
 ----
 
 NOTE: lezten Befehl mit sudo ausführen: sudo !!
+
+== 08.03.2022
+
+Lösche alle Container:
+[source, bash]
+----
+docker container prune -f
+----
+
+Docker lösche alles Images:
+
+[source, bash]
+----
+docker image prune -f
+----
+
+=== Docker Volume
+
+Volumes sind die Datenträger, die im Docker container gemountet sind.
+
+=== Postgres
+
+[source, bash]
+----
+docker build my-database .
+docker run -e POSTGRES_PASSWORD=password -p 5432:5432 --name my-database -v database-volume:var/lib/postgresql/data my-database
+----
+
+Postgres daten: /var/lib/postgresql/data
+
+== 17.03.2022
+
+=== Datenmodelle verbessern
+
+NOTE: Autodidakt ist ein Selbstlerner
+
+NOTE: Domain:  Fachbereich(Autowerkstatt, Kaufhaus)
+
+=== Anforderungsdefinition (Requirements elicitation)
+
+IMPORTANT: Hausübung S.235 - 243
+
+Indirekte Frage: "Hast du den Führerschein?" +
+nur um das Alter herauszufinden
+
+- CRC Karten (werden wir nicht machen)
+
+NOTE: Minutes of meeting = Gesprächsprotokoll
+
+=== Pflichtenheft (syspect)
+
+Wird heute allerdings oft durch Scrum ersetzt
+
+Im Pflichtenheft steht drinnen, was alles gemacht
+werden soll.
+
+nicht:
+
+    Aufwandsschätzung
+
+=== Was ist zu tun?
+
+==== Plichtenheft (SysSpec)
+
+==== Erstellen eines Maven-Projektes
+
+* Anlegen der Datenband
+* Erstellen vom UNIT-Test mit assertj-core und assertj-db
+
+
+
