@@ -130,7 +130,7 @@ a {
 <div class="details">
 <span id="author" class="author">Thomas Spindler</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2022-03-17</span>
+<span id="revdate">2022-03-31</span>
 <br><span id="revremark">ITP</span>
 </div>
 <div id="toc" class="toc2">
@@ -201,6 +201,13 @@ a {
 <li><a href="#_anforderungsdefinition_requirements_elicitation">12.2. Anforderungsdefinition (Requirements elicitation)</a></li>
 <li><a href="#_pflichtenheft_syspect">12.3. Pflichtenheft (syspect)</a></li>
 <li><a href="#_was_ist_zu_tun">12.4. Was ist zu tun?</a></li>
+</ul>
+</li>
+<li><a href="#_22_03_2022">13. 22.03.2022</a></li>
+<li><a href="#_31_03_2022">14. 31.03.2022</a>
+<ul class="sectlevel2">
+<li><a href="#_projekt_cld">14.1. Projekt cld</a></li>
+<li><a href="#_nächste_schritte_in_projekt">14.2. Nächste Schritte in Projekt:</a></li>
 </ul>
 </li>
 </ul>
@@ -1411,7 +1418,7 @@ werden soll.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Anlegen der Datenband</p>
+<p>Anlegen der Datenbank</p>
 </li>
 <li>
 <p>Erstellen vom UNIT-Test mit assertj-core und assertj-db</p>
@@ -1422,11 +1429,203 @@ werden soll.</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_22_03_2022">13. 22.03.2022</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Quizspiel über Umwelt?
+Umwelt "fun facts"
+Datenmodell ihm schicken, vor nächster Woche</p>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/jjenkov/javafx-examples">JavaFX Examples</a></p>
+</div>
+<div class="paragraph">
+<p>Anki</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_31_03_2022">14. 31.03.2022</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>LF: 21.04.2022</p>
+</li>
+<li>
+<p>Stoffumfang:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>UML-CLD</p>
+</li>
+<li>
+<p>plantuml</p>
+</li>
+<li>
+<p>asciidoctor</p>
+<div class="ulist">
+<ul>
+<li>
+<p>wie mache ich ein a adoc-Dokument?</p>
+</li>
+<li>
+<p>wie bette ich ein plantuml-Diagramm ein (include vs erstellen im adoc-dokument)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>docker</p>
+</li>
+<li>
+<p>docker-compose</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Stoffumfang NOST - Prüfung:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Projektmerkmale</p>
+</li>
+<li>
+<p>UML-CLD</p>
+</li>
+<li>
+<p>git</p>
+</li>
+<li>
+<p>was ist docker?</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Stütz ist zufrienden, wenn wir uns weiterentwickeln und uns auskennen,
+und an Projekten gearbeitet wurde
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_projekt_cld">14.1. Projekt cld</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>rename files</p>
+</li>
+<li>
+<p>skinparams anpassen</p>
+</li>
+<li>
+<p>ranking tabellen, keine Spiele speichern</p>
+</li>
+<li>
+<p>Game weg</p>
+</li>
+<li>
+<p>max 4 Antworten (in der Frage immer 4 Antworten)</p>
+</li>
+<li>
+<p>Frage bild (bitarray)</p>
+</li>
+<li>
+<p>Game_question auf askedQuestion</p>
+</li>
+<li>
+<p>hightscore</p>
+</li>
+<li>
+<p>rankinglist</p>
+</li>
+<li>
+<p>bei Fragen Link mit quelle</p>
+</li>
+<li>
+<p>nur eine richtige Antwort</p>
+</li>
+<li>
+<p>Spiel kann mehrere Runden haben</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>nach der Anmldung x fragen stellen,</p>
+</div>
+<div class="paragraph">
+<p>add to game Question: round: int</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nächste_schritte_in_projekt">14.2. Nächste Schritte in Projekt:</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Korrektes Datenmodell</p>
+</li>
+<li>
+<p>Beipsieldaten sind zu erstellen (besonders für die Stammdaten):</p>
+<div class="ulist">
+<ul>
+<li>
+<p>entweder mittels unit-tests</p>
+</li>
+<li>
+<p>oder über sql-Statements (in 3 files: create-xx.sql, insert-xx.sql und drop-xx.sql)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Geschäftsprozesse mit Unit-Tests abbilden, z.B:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Erstellen einer Auktion mit einem Produkt und einem Verkäufer</p>
+</li>
+<li>
+<p>Abgabe eines Angebots</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Sobald dies fertig ist, eine Email schreiben
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-03-17 12:00:00 +0100
+Last updated 2022-03-31 11:51:38 +0200
 </div>
 </div>
 </body>

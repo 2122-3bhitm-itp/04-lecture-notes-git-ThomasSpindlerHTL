@@ -785,8 +785,72 @@ nicht:
 
 ==== Erstellen eines Maven-Projektes
 
-* Anlegen der Datenband
+* Anlegen der Datenbank
 * Erstellen vom UNIT-Test mit assertj-core und assertj-db
 
+== 22.03.2022
+
+Quizspiel über Umwelt?
+Umwelt "fun facts"
+Datenmodell ihm schicken, vor nächster Woche
+
+https://github.com/jjenkov/javafx-examples[JavaFX Examples]
+
+Anki
 
 
+== 31.03.2022
+
+* LF: 21.04.2022
+
+* Stoffumfang:
+
+** UML-CLD
+** plantuml
+** asciidoctor
+*** wie mache ich ein a adoc-Dokument?
+*** wie bette ich ein plantuml-Diagramm ein (include vs erstellen im adoc-dokument)
+** git
+** docker
+** docker-compose
+
+* Stoffumfang NOST - Prüfung:
+** Projektmerkmale
+** UML-CLD
+** git
+** was ist docker?
+
+IMPORTANT: Stütz ist zufrienden, wenn wir uns weiterentwickeln und uns auskennen,
+und an Projekten gearbeitet wurde
+
+=== Projekt cld
+
+* rename files
+* skinparams anpassen
+* ranking tabellen, keine Spiele speichern
+* Game weg
+* max 4 Antworten (in der Frage immer 4 Antworten)
+* Frage bild (bitarray)
+* Game_question auf askedQuestion
+* hightscore
+* rankinglist
+* bei Fragen Link mit quelle
+* nur eine richtige Antwort
+* Spiel kann mehrere Runden haben
+
+nach der Anmldung x fragen stellen,
+
+add to game Question: round: int
+
+=== Nächste Schritte in Projekt:
+
+* Korrektes Datenmodell
+* Beipsieldaten sind zu erstellen (besonders für die Stammdaten):
+** entweder mittels unit-tests
+** oder über sql-Statements (in 3 files: create-xx.sql, insert-xx.sql und drop-xx.sql)
+
+* Geschäftsprozesse mit Unit-Tests abbilden, z.B:
+** Erstellen einer Auktion mit einem Produkt und einem Verkäufer
+** Abgabe eines Angebots
+
+NOTE: Sobald dies fertig ist, eine Email schreiben
