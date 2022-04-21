@@ -414,7 +414,7 @@ lokales Repo:
 Auf dem remote Branch können diese einfach über das Webinterface gelöscht werden. +
 Alle Abänderungen können nun auf dem origin master gefunden werden.
 
-
+NOTE: Cherry-picking ist, wenn man sich aus einem anderen Branch einen einzelnen commit heraussucht.
 
 
 
