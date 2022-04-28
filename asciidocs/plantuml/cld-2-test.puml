@@ -1,0 +1,50 @@
+@startuml
+left to right direction
+
+class Flugplan {
+    - flugNo: String
+    - flugDatum: LocalDate
+    ---
+    - flughafen: Flughafen
+    - Flugzeug: Flugzeug
+}
+
+class Flugzeug {
+    - typ: String
+    - hersteller: String
+    - kapazität: int
+}
+
+class Flughafen {
+    - bezeichnung: String
+    - Land: String
+}
+
+class Reiseveranstalter {
+
+}
+
+class Kontigent {
+    - anzahlSitze: int
+    - provisiosn: double
+}
+
+class Mitarbeiter {
+    - firstname: String
+    - lastname: String
+}
+
+class Buchung {
+    -anzahlSitze: int
+    -preisProSitz: int
+}
+
+Flugzeug "1" <-- "*" Flugplan
+Flugplan "*" --> "1" Flughafen
+Kontigent "*" --> "1" Reiseveranstalter
+Mitarbeiter "1"<-- "*" Kontigent: verkauft >
+Kontigent "*" -left- "*" Flugplan
+(Kontigent, Flugplan) .. Buchung
+
+
+@enduml

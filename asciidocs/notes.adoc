@@ -854,3 +854,61 @@ add to game Question: round: int
 ** Abgabe eines Angebots
 
 NOTE: Sobald dies fertig ist, eine Email schreiben
+
+== 28.04.2022
+
+=== Unterschied zwischen Klasse und Objekt
+
+Die Klasse ist der Bauplan, und das Objekt wird vom Bauplan erstellt.
+
+Das Objekt wird dann im heap gespeichert.
+Ein Objekt kann daher mehrmals existieren, eine Klasse nicht.
+Wenn die Variablen in einem Objekt unterschiedlich sind, spricht man von einem Zustand des Objektes.
+
+==== Vorgehensmodelle:
+
+Wichtige Folien: 2, 3, 7, Agile Vorgehensmodelle, SCRUM, User Story, Rollen in Scrum,
+14, 15, 16, 17, 18
+
+Unwichtige Folien:
+
+Scrum:
+
+kleine schlagkräftige Teams, die mit nur 2 Pizzen satt werden.
+
+NOTE: Fakturen sind Rechnungen
+
+== Testrückgabe
+
+=== 1. Datenmodell
+
+[plantuml, 2.lf-ITP]
+----
+include::plantuml/cld-2-test.puml[]
+----
+
+=== 2. Kurzfragen
+
+==== a
+
+-> Bind mount
+
+==== b
+
+gitignore ergänzen
+
+==== c
+
+Einen commit von einem Branch in einem anderen.
+
+z.B: einen Bugfix von einem Feature branch in den main mergen.
+
+==== d
+
+Programm names asciidoctor.
+
+==== e
+
+-> Innhatliches Ziel +
+-> Zeitliches Ziel +
+-> Projektrisiko
