@@ -912,3 +912,27 @@ Programm names asciidoctor.
 -> Innhatliches Ziel +
 -> Zeitliches Ziel +
 -> Projektrisiko
+
+== Übung
+
+[source, dockerfile]
+----
+FROM ubuntu
+RUN echo "hello 3bhitm" >> test.txt
+----
+
+[source, bash]
+----
+docker build -t echo3bhitm .
+----
+
+[source, dockerfile]
+----
+FROM echo3bhitm
+RUN cat test.txt
+----
+
+[source, bash]
+----
+docker build -t echo3bhitmout .
+----
