@@ -14,16 +14,13 @@ ifndef::imagesdir[:imagesdir: images]
 Buch S. 81: Projekt-Start-up-Workshop
 
 === ITP:
-Projekte
-ProjektvorgehensModelle
-IPT vereint Mathematik, English, SEW, und weitere in ein Fach
+
+Projekte ProjektvorgehensModelle IPT vereint Mathematik, English, SEW, und weitere in ein Fach
 
 Wie kann ich ein Projekt durchführen?
-(Teams, zusammenarbeit, Codesicherung)
-oft einfach nur eine art von Checklisten abarbeiten
+(Teams, zusammenarbeit, Codesicherung) oft einfach nur eine art von Checklisten abarbeiten
 
-Buch S. 84: Organisationsformen
-Beispiel Mondlandung (alles auf eine Aufgabe (Task force)
+Buch S. 84: Organisationsformen Beispiel Mondlandung (alles auf eine Aufgabe (Task force)
 
 Unternehmensbereich:
 
@@ -35,9 +32,9 @@ Unternehmensbereich:
 
 Strategien:
 
-* Strategie (2-4 Jahre)		z.B: Produktoptionen
-* Taktiv (1 Jahr)			z.B: verwendete Maschinen
-* operatives Vorgehen (unmittelbar)	z.B: Arbeitszeiten (Schichtbetrieb)
+* Strategie (2-4 Jahre) z.B: Produktoptionen
+* Taktiv (1 Jahr) z.B: verwendete Maschinen
+* operatives Vorgehen (unmittelbar) z.B: Arbeitszeiten (Schichtbetrieb)
 
     HÜ: S. 85 lesen (Kapitel 2 fertig)
 
@@ -92,6 +89,7 @@ Origin hinzufügen mit
     git origin add <LINK>
 
 === Git Branches
+
 Branches sind pointer auf den letzen Commit des Master branches +
 ein Repository kann beliebig viele Branches haben. +
 
@@ -130,8 +128,7 @@ updaten des Repos:
 
     git pull
 
-mit diesen Command laded man alle Abänderungen in den
-Dateien des remote repos herunter.
+mit diesen Command laded man alle Abänderungen in den Dateien des remote repos herunter.
 
 Person 2 editiert dann die Datei, committed und pusht
 
@@ -150,8 +147,7 @@ beide Personen:
     git commit -m "merge test2"
     git push
 
-bei einer Person wird der push rejected, da das Remote
-repo Änderungen beinhaltet, die noch nicht existieren. +
+bei einer Person wird der push rejected, da das Remote repo Änderungen beinhaltet, die noch nicht existieren. +
 Daher braucht man git stash:
 
     git stash
@@ -161,8 +157,7 @@ aufgrund des Commites kann stash nicht ausgeführt werden.
 IMPORTANT: vor dem commit *IMMER* einen pull machen
 
 Öffnen des Repos in IntelliJ für einen Merge +
-Mergeconflikte sind auf der Commandline eher schwer zu machen,
-daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).
+Mergeconflikte sind auf der Commandline eher schwer zu machen, daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).
 
 Man kann dafür auch andere Programme verwenden, z.B Github desktop
 
@@ -189,6 +184,7 @@ im Ordner /home/idea-scripts sollten nun die Scripts generiert worden sein.
     dann auf dem Interface auswählen bis alles passt
 
 IMPORTANT: HÜ: OraVM hinbekommen und dokumentieren
+
 ////
 === GIT Merge 2 (Mitschrift Thomas Spindler)
 11.01.2022
@@ -267,7 +263,8 @@ Danach holen wir die Abänderungen wieder zurück:
 
 Dann können wir ohne weitere Probleme commiten und pushen.
 
-IMPORTANT: Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern. Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
+IMPORTANT: Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern.
+Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
 
 image::IntelliJ-auto-git-pulls.jpg[]
 
@@ -315,7 +312,7 @@ den aktuellen Branch immer aktuell halten mithilfe von:
 
 Dies updated alle changes des aktuellen branches mit dem main branch.
 
-[plantuml, git-merge]
+[plantuml,git-merge]
 ----
 @startuml
 skinparam backgroundColor transparent
@@ -364,15 +361,15 @@ Architye: Quelle / Vorbild
 - Java SE: Java standard edition (für Desktop)
 
 - Java EE: Java Enterprise:
-    - zusätzliche Libraries für verteilte Systeme
-    - Verwenden von Java App Servern (programmiere auf Servern)
-    - nun Jakarte EE
-    - microprofile:
-        - neue App!
-        - daraus Entwicklungen:
-            - Quarkus
-            - Helidon
-            - micronaut
+- zusätzliche Libraries für verteilte Systeme
+- Verwenden von Java App Servern (programmiere auf Servern)
+- nun Jakarte EE
+- microprofile:
+- neue App!
+- daraus Entwicklungen:
+- Quarkus
+- Helidon
+- micronaut
 
 Rest API: Internet für Maschinen (verwendet HTTP)  +
 HTML / HTTP: Internet für Menschen
@@ -385,11 +382,13 @@ Grundelemente des Programmierens:
 . Schleifen
 
 == PlantUML (Mitschrift Thomas Spindler)
+
 PlantUML Diagramme sind, wenn man das Template verwendet, im plantuml Ordner.
 
 === Umgebungen
 
 ==== PlantUML in Asciidoc
+
 Da wir unsere Mitschriften in Asciidoc führen, zeigen wir dies gleich am Anfang. +
 Einbindung von PlantUML in Asciidoc:
 
@@ -400,7 +399,8 @@ Einbindung von PlantUML in Asciidoc:
     @enduml
     ----
 
-Hierbei gilt zu beachten, dass der <NAME> immer unterschiedlich sein muss. Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.
+Hierbei gilt zu beachten, dass der <NAME> immer unterschiedlich sein muss.
+Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.
 
 Um ein externes File einzufügen, kann folgende Syntax verwendet werden:
 
@@ -410,12 +410,15 @@ Um ein externes File einzufügen, kann folgende Syntax verwendet werden:
     ----
 
 ==== PlantUML in IntelliJ
-Das Plugin "PlantUML initgration" herunterladen und installieren. Anschließend das IDE neu starten
+
+Das Plugin "PlantUML initgration" herunterladen und installieren.
+Anschließend das IDE neu starten
 
 .Installieren von IntelliJ Plugin
 image::IntelliJ-PlantUML-intigration.jpg[]
 
 === Grundlagen
+
 jedes PlantUML file hat ein Start und ein Ende:
 
     @startuml
@@ -427,7 +430,9 @@ jedes PlantUML file hat ein Start und ein Ende:
 Nachschlagwerk: https://plantuml.com[PlantUML Dokumentation]
 
 ==== Sequenzen
-Eine Sequenz ist ein Teil unseres Programmes. Mithilfe von PlantUML können wird diese schnell und genau darstellen. +
+
+Eine Sequenz ist ein Teil unseres Programmes.
+Mithilfe von PlantUML können wird diese schnell und genau darstellen. +
 
 Beispiel für eine Sequenz in PlantUML:
 
@@ -447,7 +452,8 @@ skinparam shadowing false
 @enduml
 ----
 
-Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben. Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.
+Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben.
+Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.
 
     @startuml
     HelloWorld:This is a description
@@ -464,6 +470,7 @@ HelloWorld:This is a description
 ----
 
 ==== If-statements
+
 If Statements in PlantUML darstellen:
 
     @startuml
@@ -491,7 +498,9 @@ stop
 ----
 
 ==== Start und Stop
-Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende. Diese können mit den Keyworten "start" und "stop" dargestellt werden.
+
+Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende.
+Diese können mit den Keyworten "start" und "stop" dargestellt werden.
 
     @startuml
     start
@@ -499,7 +508,7 @@ Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfan
     stop
     @enduml
 
-[plantuml, start-stop]
+[plantuml,start-stop]
 ----
 @startuml
 skinparam backgroundColor transparent
@@ -510,9 +519,10 @@ start
 stop
 @enduml
 ----
+
 === PlantUML 2 (20.01.2022)
 
-[plantuml, ucd1, png]
+[plantuml,ucd1,png]
 ----
 @startuml
 skinparam backgroundColor transparent
@@ -531,12 +541,11 @@ fc -- UCCRUICE
 @enduml
 ----
 
-TIP: In Plantuml kann man verschiedene Themes verwenden,
-damit die Ergebnisse unterschiedliche Styles haben.
+TIP: In Plantuml kann man verschiedene Themes verwenden, damit die Ergebnisse unterschiedliche Styles haben.
 
 === Callouts
 
-[source, java]
+[source,java]
 ----
     class Main() {
         public static void main(String[] args){
@@ -545,6 +554,7 @@ damit die Ergebnisse unterschiedliche Styles haben.
         }
     }
 ----
+
 <.> Erstellen eines Textes
 <.> Ausgeben des oben erstellten Textes
 
@@ -555,6 +565,7 @@ TIP: Lernen Sie die Fachbegriffe
 IMPORTANT: Damit Sie gut googeln können
 
 === Phasen der SoftwareEntwicklung
+
 Es gibt das V und das Wasserfall Modell. +
 V-Modell: angeordnet wie ein V (V-modell ) +
 Arm 1:
@@ -573,11 +584,10 @@ image::V-Modell.png[]
 
 Fakturer: Ein Rechnungs-erstellungs Programm
 
-Seiten wichtig: 17, 27, 28, 45,
-Seite nicht wichtig: 18, 19, 22, 49 - 50
-Kaptiel UML: complience Level lernen (S. 74)
+Seiten wichtig: 17, 27, 28, 45, Seite nicht wichtig: 18, 19, 22, 49 - 50 Kaptiel UML: complience Level lernen (S. 74)
 
 === Beispiel aus dem Unterricht
+
 Mithilfe diesen Beispieles wurde uns PlantUML erklärt:
 
 .Beispiel aus dem Unterricht:
@@ -589,9 +599,10 @@ include::plantuml/plantuml-example-1.puml[]
 ----
 
 === 25.02.2022
+
 2 Personen erstellen von folgenden Java-Programm:
 
-[plantuml, java-programm0]
+[plantuml,java-programm0]
 ----
 @startuml
 skinparam backgroundColor transparent
@@ -629,11 +640,13 @@ jede Person arbeitet an einem Branch ihr eigenes Feature aus.
 
 IMPORTANT: Branches nicht auf Personen, sondern Features!
 
-zuerst checken, dass der Master up to date ist. Dann kann man die branches mergen mithilfe von
+zuerst checken, dass der Master up to date ist.
+Dann kann man die branches mergen mithilfe von
 
     git merge feature/student
 
-und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist) +
+und dann das gesamte pushen.
+Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist) +
 daraufhin wieder in den master wechseln, und ebenfalls wieder mergen
 
     git checkout master
@@ -655,7 +668,7 @@ NOTE: Unser Berufsbild: DevOps
 
 https://youtu.be/0yWAtQ6wYNM[Video dazu]
 
-[plantuml, tennis]
+[plantuml,tennis]
 ----
 @startuml
 include::plantuml/cld-tennis.puml[]
@@ -666,7 +679,7 @@ include::plantuml/cld-tennis.puml[]
 
 === Post Installation steps:
 
-[source, bash]
+[source,bash]
 ----
 sudo groupadd docker
 sudo usermod -aG docker $USER
@@ -675,14 +688,14 @@ newgrp docker
 
 Change owner of a directory, with all its contents:
 
-[source, bash]
+[source,bash]
 ----
 sudo chwon -R ubuntu /opt
 ----
 
 Docker run nginx:
 
-[source, bash]
+[source,bash]
 ----
 docker run --name my-nginx -v ${PWD}/html:/usr/share/nginx/html:ro -d nginx:1.21.6
 ----
@@ -696,7 +709,7 @@ NOTE: Ein Docker Container ist nicht nur ein File, sondern auch ein Prozess.
 
 shell script Ausführrechte hinzufügen, dann ausführen
 
-[source, bash]
+[source,bash]
 ----
 chmod +x start-nginx.sh
 bash start-nginx.sh
@@ -723,14 +736,15 @@ NOTE: lezten Befehl mit sudo ausführen: sudo !!
 == 08.03.2022
 
 Lösche alle Container:
-[source, bash]
+[source,bash]
+
 ----
 docker container prune -f
 ----
 
 Docker lösche alles Images:
 
-[source, bash]
+[source,bash]
 ----
 docker image prune -f
 ----
@@ -741,7 +755,7 @@ Volumes sind die Datenträger, die im Docker container gemountet sind.
 
 === Postgres
 
-[source, bash]
+[source,bash]
 ----
 docker build my-database .
 docker run -e POSTGRES_PASSWORD=password -p 5432:5432 --name my-database -v database-volume:var/lib/postgresql/data my-database
@@ -755,7 +769,7 @@ Postgres daten: /var/lib/postgresql/data
 
 NOTE: Autodidakt ist ein Selbstlerner
 
-NOTE: Domain:  Fachbereich(Autowerkstatt, Kaufhaus)
+NOTE: Domain: Fachbereich(Autowerkstatt, Kaufhaus)
 
 === Anforderungsdefinition (Requirements elicitation)
 
@@ -772,8 +786,7 @@ NOTE: Minutes of meeting = Gesprächsprotokoll
 
 Wird heute allerdings oft durch Scrum ersetzt
 
-Im Pflichtenheft steht drinnen, was alles gemacht
-werden soll.
+Im Pflichtenheft steht drinnen, was alles gemacht werden soll.
 
 nicht:
 
@@ -791,13 +804,11 @@ nicht:
 == 22.03.2022
 
 Quizspiel über Umwelt?
-Umwelt "fun facts"
-Datenmodell ihm schicken, vor nächster Woche
+Umwelt "fun facts" Datenmodell ihm schicken, vor nächster Woche
 
 https://github.com/jjenkov/javafx-examples[JavaFX Examples]
 
 Anki
-
 
 == 31.03.2022
 
@@ -820,8 +831,7 @@ Anki
 ** git
 ** was ist docker?
 
-IMPORTANT: Stütz ist zufrienden, wenn wir uns weiterentwickeln und uns auskennen,
-und an Projekten gearbeitet wurde
+IMPORTANT: Stütz ist zufrienden, wenn wir uns weiterentwickeln und uns auskennen, und an Projekten gearbeitet wurde
 
 === Projekt cld
 
@@ -867,8 +877,7 @@ Wenn die Variablen in einem Objekt unterschiedlich sind, spricht man von einem Z
 
 ==== Vorgehensmodelle:
 
-Wichtige Folien: 2, 3, 7, Agile Vorgehensmodelle, SCRUM, User Story, Rollen in Scrum,
-14, 15, 16, 17, 18
+Wichtige Folien: 2, 3, 7, Agile Vorgehensmodelle, SCRUM, User Story, Rollen in Scrum, 14, 15, 16, 17, 18
 
 Unwichtige Folien:
 
@@ -882,7 +891,7 @@ NOTE: Fakturen sind Rechnungen
 
 === 1. Datenmodell
 
-[plantuml, 2.lf-ITP]
+[plantuml,2.lf-ITP]
 ----
 include::plantuml/cld-2-test.puml[]
 ----
@@ -915,32 +924,31 @@ Programm names asciidoctor.
 
 == Übung
 
-[source, dockerfile]
+[source,dockerfile]
 ----
 FROM ubuntu
 RUN echo "hello 3bhitm" >> test.txt
 ----
 
-[source, bash]
+[source,bash]
 ----
 docker build -t echo3bhitm .
 ----
 
-[source, dockerfile]
+[source,dockerfile]
 ----
 FROM echo3bhitm
 RUN cat test.txt
 ----
 
-[source, bash]
+[source,bash]
 ----
 docker build -t echo3bhitmout .
 ----
 
 == Java class Diagramm anzeigen
 
-Klassen auswöheln
-Rechtsklick -> diagram -> show-diagram
+Klassen auswöheln Rechtsklick -> diagram -> show-diagram
 -> show depenencies
 -> rechte maus -> layout -> netz -> organic
 -> rechte maus -> appearance -> show edge labels
@@ -951,7 +959,7 @@ Dies kann auch für Datenbanken und deren Strukturen verwednet werden.
 
 == 2022-05-19
 
-image::2022-05-91-board2.png[]
+image::2022-05-91-board2.png[baord,400]
 
 NOTE: Domain = Fachbereich
 
@@ -967,11 +975,12 @@ Klassen:
 * Behavior (Verhalten): Methoden der Klassen
 
 === Repository pattern
-.Source: https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design[Design the infrastucture persistance layer^]
 
-image::repository-pattern.png[]
+.Source: https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design[Design the infrastucture persistance layer^]
+image::repository-pattern.png[repository-pattern,600]
 
 === Was muss beim Projekt gemacht werden, um
+
 positiv zu sein?
 
 * Ein korrektes Datenmodell muss implementiert und dokumentiert werden
@@ -992,10 +1001,20 @@ positiv zu sein?
 
 Eine Transaktion besteht aus mehreren LUWs.
 
-image::2022-05-91-board2.png[]
+image::2022-05-91-board2.png[board,400]
 
-image::2022-05-19-board3.png[]
+image::2022-05-19-board3.png[board2,400]
 
 NOTE: LUW = Logical Unit of Work
 
 Transaktionen werden immer nur beim schreiben, nicht beim Lesen verwendet
+
+== 2022-05-31
+
+Java streams
+
+Es gibt immer einen Producer, dann einen oder mehrere Functions, und dann einen Consumer
+
+Memory leak: wenn ein Programm die Recourcen nicht schließt.
+
+Nächste Woche: Unit testing

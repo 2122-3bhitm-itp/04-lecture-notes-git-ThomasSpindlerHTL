@@ -130,7 +130,7 @@ a {
 <div class="details">
 <span id="author" class="author">Thomas Spindler</span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2022-05-19</span>
+<span id="revdate">2022-05-31</span>
 <br><span id="revremark">ITP</span>
 </div>
 <div id="toc" class="toc2">
@@ -230,6 +230,7 @@ a {
 <li><a href="#_transaktion">19.3. Transaktion</a></li>
 </ul>
 </li>
+<li><a href="#_2022_05_31">20. 2022-05-31</a></li>
 </ul>
 </div>
 </div>
@@ -243,18 +244,14 @@ a {
 <div class="sect2">
 <h3 id="_itp">1.1. ITP:</h3>
 <div class="paragraph">
-<p>Projekte
-ProjektvorgehensModelle
-IPT vereint Mathematik, English, SEW, und weitere in ein Fach</p>
+<p>Projekte ProjektvorgehensModelle IPT vereint Mathematik, English, SEW, und weitere in ein Fach</p>
 </div>
 <div class="paragraph">
 <p>Wie kann ich ein Projekt durchführen?
-(Teams, zusammenarbeit, Codesicherung)
-oft einfach nur eine art von Checklisten abarbeiten</p>
+(Teams, zusammenarbeit, Codesicherung) oft einfach nur eine art von Checklisten abarbeiten</p>
 </div>
 <div class="paragraph">
-<p>Buch S. 84: Organisationsformen
-Beispiel Mondlandung (alles auf eine Aufgabe (Task force)</p>
+<p>Buch S. 84: Organisationsformen Beispiel Mondlandung (alles auf eine Aufgabe (Task force)</p>
 </div>
 <div class="paragraph">
 <p>Unternehmensbereich:</p>
@@ -284,13 +281,13 @@ Beispiel Mondlandung (alles auf eine Aufgabe (Task force)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Strategie (2-4 Jahre)		z.B: Produktoptionen</p>
+<p>Strategie (2-4 Jahre) z.B: Produktoptionen</p>
 </li>
 <li>
-<p>Taktiv (1 Jahr)			z.B: verwendete Maschinen</p>
+<p>Taktiv (1 Jahr) z.B: verwendete Maschinen</p>
 </li>
 <li>
-<p>operatives Vorgehen (unmittelbar)	z.B: Arbeitszeiten (Schichtbetrieb)</p>
+<p>operatives Vorgehen (unmittelbar) z.B: Arbeitszeiten (Schichtbetrieb)</p>
 <div class="literalblock">
 <div class="content">
 <pre>HÜ: S. 85 lesen (Kapitel 2 fertig)</pre>
@@ -462,8 +459,7 @@ updaten des Repos:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>mit diesen Command laded man alle Abänderungen in den
-Dateien des remote repos herunter.</p>
+<p>mit diesen Command laded man alle Abänderungen in den Dateien des remote repos herunter.</p>
 </div>
 <div class="paragraph">
 <p>Person 2 editiert dann die Datei, committed und pusht</p>
@@ -495,8 +491,7 @@ git push</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>bei einer Person wird der push rejected, da das Remote
-repo Änderungen beinhaltet, die noch nicht existieren.<br>
+<p>bei einer Person wird der push rejected, da das Remote repo Änderungen beinhaltet, die noch nicht existieren.<br>
 Daher braucht man git stash:</p>
 </div>
 <div class="literalblock">
@@ -521,8 +516,7 @@ vor dem commit <strong>IMMER</strong> einen pull machen
 </div>
 <div class="paragraph">
 <p>Öffnen des Repos in IntelliJ für einen Merge<br>
-Mergeconflikte sind auf der Commandline eher schwer zu machen,
-daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).</p>
+Mergeconflikte sind auf der Commandline eher schwer zu machen, daher sollten wir dafür einen Editor verwenden (IntelliJ, VSCode).</p>
 </div>
 <div class="paragraph">
 <p>Man kann dafür auch andere Programme verwenden, z.B Github desktop</p>
@@ -629,7 +623,8 @@ git pull</pre>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern. Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
+Git pulls sollten regelmäßig und oft gemacht werden, um größere Konflikt zu verhindern.
+Dies kann auch in IntelliJ unter den folgenden Optionen automatisiert werden:
 </td>
 </tr>
 </table>
@@ -869,7 +864,8 @@ Einbindung von PlantUML in Asciidoc:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Hierbei gilt zu beachten, dass der &lt;NAME&gt; immer unterschiedlich sein muss. Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.</p>
+<p>Hierbei gilt zu beachten, dass der &lt;NAME&gt; immer unterschiedlich sein muss.
+Wenn ein name doppelt verwendet wird, wird nur eines der zwei Diagramme an beiden Stellen angezeigt.</p>
 </div>
 <div class="paragraph">
 <p>Um ein externes File einzufügen, kann folgende Syntax verwendet werden:</p>
@@ -886,7 +882,8 @@ include::plantuml/plantuml-example-1.puml[]
 <div class="sect3">
 <h4 id="_plantuml_in_intellij">8.1.2. PlantUML in IntelliJ</h4>
 <div class="paragraph">
-<p>Das Plugin "PlantUML initgration" herunterladen und installieren. Anschließend das IDE neu starten</p>
+<p>Das Plugin "PlantUML initgration" herunterladen und installieren.
+Anschließend das IDE neu starten</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -916,7 +913,8 @@ stop
 <div class="sect3">
 <h4 id="_sequenzen">8.2.1. Sequenzen</h4>
 <div class="paragraph">
-<p>Eine Sequenz ist ein Teil unseres Programmes. Mithilfe von PlantUML können wird diese schnell und genau darstellen.<br></p>
+<p>Eine Sequenz ist ein Teil unseres Programmes.
+Mithilfe von PlantUML können wird diese schnell und genau darstellen.<br></p>
 </div>
 <div class="paragraph">
 <p>Beispiel für eine Sequenz in PlantUML:</p>
@@ -937,7 +935,8 @@ stop
 </div>
 </div>
 <div class="paragraph">
-<p>Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben. Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.</p>
+<p>Ebenfalls kann man einer Sequenz einen Titel und eine Beschreibung geben.
+Hierbei ist darauf zu achten, dass im Titel keine Leerzeichen vorhanden sein dürfen.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -977,7 +976,8 @@ endif
 <div class="sect3">
 <h4 id="_start_und_stop">8.2.3. Start und Stop</h4>
 <div class="paragraph">
-<p>Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende. Diese können mit den Keyworten "start" und "stop" dargestellt werden.</p>
+<p>Wie bereits im Beispiel oben eingebaut, hat ein Programmablauf immer einen Anfang und ein Ende.
+Diese können mit den Keyworten "start" und "stop" dargestellt werden.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1009,8 +1009,7 @@ stop
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-In Plantuml kann man verschiedene Themes verwenden,
-damit die Ergebnisse unterschiedliche Styles haben.
+In Plantuml kann man verschiedene Themes verwenden, damit die Ergebnisse unterschiedliche Styles haben.
 </td>
 </tr>
 </table>
@@ -1101,9 +1100,7 @@ Abnahme</pre>
 <p>Fakturer: Ein Rechnungs-erstellungs Programm</p>
 </div>
 <div class="paragraph">
-<p>Seiten wichtig: 17, 27, 28, 45,
-Seite nicht wichtig: 18, 19, 22, 49 - 50
-Kaptiel UML: complience Level lernen (S. 74)</p>
+<p>Seiten wichtig: 17, 27, 28, 45, Seite nicht wichtig: 18, 19, 22, 49 - 50 Kaptiel UML: complience Level lernen (S. 74)</p>
 </div>
 </div>
 <div class="sect2">
@@ -1156,7 +1153,8 @@ Branches nicht auf Personen, sondern Features!
 </table>
 </div>
 <div class="paragraph">
-<p>zuerst checken, dass der Master up to date ist. Dann kann man die branches mergen mithilfe von</p>
+<p>zuerst checken, dass der Master up to date ist.
+Dann kann man die branches mergen mithilfe von</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -1164,7 +1162,8 @@ Branches nicht auf Personen, sondern Features!
 </div>
 </div>
 <div class="paragraph">
-<p>und dann das gesamte pushen. Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist)<br>
+<p>und dann das gesamte pushen.
+Daraufhin den feature/teacher branch auschecken und pullen (damit alles up to date ist)<br>
 daraufhin wieder in den master wechseln, und ebenfalls wieder mergen</p>
 </div>
 <div class="literalblock">
@@ -1365,7 +1364,7 @@ Autodidakt ist ein Selbstlerner
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Domain:  Fachbereich(Autowerkstatt, Kaufhaus)
+Domain: Fachbereich(Autowerkstatt, Kaufhaus)
 </td>
 </tr>
 </table>
@@ -1415,8 +1414,7 @@ Minutes of meeting = Gesprächsprotokoll
 <p>Wird heute allerdings oft durch Scrum ersetzt</p>
 </div>
 <div class="paragraph">
-<p>Im Pflichtenheft steht drinnen, was alles gemacht
-werden soll.</p>
+<p>Im Pflichtenheft steht drinnen, was alles gemacht werden soll.</p>
 </div>
 <div class="paragraph">
 <p>nicht:</p>
@@ -1454,8 +1452,7 @@ werden soll.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Quizspiel über Umwelt?
-Umwelt "fun facts"
-Datenmodell ihm schicken, vor nächster Woche</p>
+Umwelt "fun facts" Datenmodell ihm schicken, vor nächster Woche</p>
 </div>
 <div class="paragraph">
 <p><a href="https://github.com/jjenkov/javafx-examples">JavaFX Examples</a></p>
@@ -1536,8 +1533,7 @@ Datenmodell ihm schicken, vor nächster Woche</p>
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Stütz ist zufrienden, wenn wir uns weiterentwickeln und uns auskennen,
-und an Projekten gearbeitet wurde
+Stütz ist zufrienden, wenn wir uns weiterentwickeln und uns auskennen, und an Projekten gearbeitet wurde
 </td>
 </tr>
 </table>
@@ -1657,8 +1653,7 @@ Wenn die Variablen in einem Objekt unterschiedlich sind, spricht man von einem Z
 <div class="sect3">
 <h4 id="_vorgehensmodelle">15.1.1. Vorgehensmodelle:</h4>
 <div class="paragraph">
-<p>Wichtige Folien: 2, 3, 7, Agile Vorgehensmodelle, SCRUM, User Story, Rollen in Scrum,
-14, 15, 16, 17, 18</p>
+<p>Wichtige Folien: 2, 3, 7, Agile Vorgehensmodelle, SCRUM, User Story, Rollen in Scrum, 14, 15, 16, 17, 18</p>
 </div>
 <div class="paragraph">
 <p>Unwichtige Folien:</p>
@@ -1767,8 +1762,7 @@ RUN cat test.txt</code></pre>
 <h2 id="_java_class_diagramm_anzeigen">18. Java class Diagramm anzeigen</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Klassen auswöheln
-Rechtsklick &#8594; diagram &#8594; show-diagram
+<p>Klassen auswöheln Rechtsklick &#8594; diagram &#8594; show-diagram
 &#8594; show depenencies
 &#8594; rechte maus &#8594; layout &#8594; netz &#8594; organic
 &#8594; rechte maus &#8594; appearance &#8594; show edge labels</p>
@@ -1795,7 +1789,7 @@ Dies kann dann auch als PlantUML exportiert werden.
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/2022-05-91-board2.png" alt="2022 05 91 board2">
+<img src="images/2022-05-91-board2.png" alt="baord" width="400">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1863,7 +1857,7 @@ CRAD = Create Read Add Delete
 <h3 id="_repository_pattern">19.1. Repository pattern</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/repository-pattern.png" alt="repository pattern">
+<img src="images/repository-pattern.png" alt="repository-pattern" width="600">
 </div>
 <div class="title">Figure 3. Source: <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design" target="_blank" rel="noopener">Design the infrastucture persistance layer</a></div>
 </div>
@@ -1930,12 +1924,12 @@ CRAD = Create Read Add Delete
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/2022-05-91-board2.png" alt="2022 05 91 board2">
+<img src="images/2022-05-91-board2.png" alt="board" width="400">
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/2022-05-19-board3.png" alt="2022 05 19 board3">
+<img src="images/2022-05-19-board3.png" alt="board2" width="400">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -1956,11 +1950,28 @@ LUW = Logical Unit of Work
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_2022_05_31">20. 2022-05-31</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java streams</p>
+</div>
+<div class="paragraph">
+<p>Es gibt immer einen Producer, dann einen oder mehrere Functions, und dann einen Consumer</p>
+</div>
+<div class="paragraph">
+<p>Memory leak: wenn ein Programm die Recourcen nicht schließt.</p>
+</div>
+<div class="paragraph">
+<p>Nächste Woche: Unit testing</p>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0<br>
-Last updated 2022-05-19 11:53:37 +0200
+Last updated 2022-05-31 08:47:07 +0200
 </div>
 </div>
 </body>
