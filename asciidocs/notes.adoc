@@ -967,7 +967,7 @@ NOTE: Aggregieren: zusammenfassen
 
 NOTE: DAO = Data
 
-NOTE: CRAD = Create Read Add Delete
+NOTE: CRUD = Create Read Update Delete
 
 Klassen:
 
@@ -1007,7 +1007,7 @@ image::2022-05-19-board3.png[board2,400]
 
 NOTE: LUW = Logical Unit of Work
 
-Transaktionen werden immer nur beim schreiben, nicht beim Lesen verwendet
+Transaktionen werden immer nur beim Schreiben, nicht beim Lesen verwendet
 
 == 2022-05-31
 
@@ -1018,3 +1018,61 @@ Es gibt immer einen Producer, dann einen oder mehrere Functions, und dann einen 
 Memory leak: wenn ein Programm die Recourcen nicht schließt.
 
 Nächste Woche: Unit testing
+
+== 2022-06-02
+
+=== Verbesserung CLD
+
+[plantuml, cld-tumfahrt]
+----
+left to right direction
+
+class Person {}
+
+class Kursleiter {}
+
+class Teilnehmer {}
+
+class Kurs{}
+
+class Buchung {}
+
+class Veranstaltung {}
+
+Person <|-- Kursleiter
+Person <|-- Teilnehmer
+
+Buchung "*"--"1" Teilnehmer
+Buchung "0..15"---"1" Kurs
+
+Veranstaltung "*"--"*" Teilnehmer
+Veranstaltung "*"--"1" Kurs
+(Veranstaltung, Teilnehmer) .. Teilnahme
+
+Kurs "1"--"0..1" Kurs
+Kurs "*"--"1" Kursleiter
+----
+
+NOTE: Mengengerüst: Man überlegt die Menge der einzelnen Tabellen
+
+=== Vorgehensmodelle
+
+Vorgehensmodell:
+
+es gibt Vorgänge und Ergebnisse
+
+Welche Sachen baruch ich, welche Anforderungen hate der Kunde, Ergebnis ist ein Pflichtenheft.
+
+Das Ergebnis eines Entwurfes ist die Systemarchitektur und deren Diagramme (Klassen, Usecase, ....)
+
+Modell: Vereinfachte Abbildung der Realität unter der Berücksichtigung eines besondern Faktors
+
+NOTE: Ergebnis des Testes ist das Testprotokoll
+
+==== Nichtfunktionale Anwendungen:
+
+Durchziehen das gesamte Produkt, können nicht ausgeschaltet werden
+
+z.B: Sicherheit beim Auto, Einfaches Userdesign, ...
+
+==== Definition of Done:
