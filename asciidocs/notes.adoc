@@ -1073,6 +1073,4 @@ NOTE: Ergebnis des Testes ist das Testprotokoll
 
 Durchziehen das gesamte Produkt, können nicht ausgeschaltet werden
 
-z.B: Sicherheit beim Auto, Einfaches Userdesign, ...
-
-==== Definition of Done:
+z.B: Sicherheit beim Auto, Einfaches User-design, ...
