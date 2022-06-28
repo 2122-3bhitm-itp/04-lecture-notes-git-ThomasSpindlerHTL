@@ -1074,3 +1074,15 @@ NOTE: Ergebnis des Testes ist das Testprotokoll
 Durchziehen das gesamte Produkt, können nicht ausgeschaltet werden
 
 z.B: Sicherheit beim Auto, Einfaches User-design, ...
+
+==== 2022-06-28 Unit testing
+
+Modultest: im Backend bei den Entities +
+Integrationstest: Bei der Buisness Logic (oder repos) +
+Systemtest: der REST Service + Die Oberfläche
+
+NOTE: Populärstes Java Test framework ist JUnit.
+
+NOTE: Zwischen Primitivdatentypen und Object wechseln nennt man **BOXING**
+
+NOTE: Maven scope legt fest, wo die Dependency verwendet wird, z.B nur zum Testen, oder im Endprogramm
